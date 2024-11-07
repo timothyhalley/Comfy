@@ -39,32 +39,27 @@ models = {
         "dir": "./ComfyUI/models/clip/",
         "filename": "text_encoders/t5xxl_fp16.safetensors",
     },
+    "SD XL Refiner 1.0": {
+        "url": "stabilityai/stable-diffusion-xl-refiner-1.0",
+        "dir": "./ComfyUI/models/checkpoints/",
+        "filename": "sd_xl_refiner_1.0_0.9vae.safetensors",
+    },
     "SDXL VAE": {
         "url": "stabilityai/sdxl-vae",
         "dir": "./ComfyUI/models/vae/",
         "filename": "sdxl_vae.safetensors",
-    },
-    "XL Lego Brickheadz": {
-        "url": "nerijs/lego-brickheadz-xl",
-        "dir": "./ComfyUI/models/loras/",
-        "filename": "legobrickheadz-v1.0-000004.safetensors",
-    },
-    "LEGO Minifig XL": {
-        "url": "nerijs/lego-minifig-xl",
-        "dir": "./ComfyUI/models/loras/",
-        "filename": "legominifig-v1.0-000003.safetensors",
     },
     "FLUX 1 DEV": {
         "url": "black-forest-labs/FLUX.1-dev",
         "dir": "./ComfyUI/models/unet/",
         "filename": "flux1-dev.safetensors",
     },
+    # XLabs-AI/flux-controlnet-collections
     "FLUX ControlNet Diff": {
         "url": "Shakker-Labs/FLUX.1-dev-ControlNet-Union-Pro",
         "dir": "./ComfyUI/models/controlnet",
         "filename": "diffusion_pytorch_model.safetensors",
     },
-    # XLabs-AI/flux-controlnet-collections
     "FLUX ControlNet Canny": {
         "url": "XLabs-AI/flux-controlnet-collections",
         "dir": "./ComfyUI/models/controlnet",
@@ -80,6 +75,11 @@ models = {
         "dir": "./ComfyUI/models/controlnet",
         "filename": "flux-hed-controlnet-v3.safetensors",
     },
+    "SD15 Monster Control": {
+        "url": "monster-labs/control_v1p_sd15_qrcode_monster",
+        "dir": "./ComfyUI/models/controlnet",
+        "filename": "v2/control_v1p_sd15_qrcode_monster_v2.safetensors",
+    },
     # VAE
     "FLUX VAE": {
         "url": "black-forest-labs/FLUX.1-schnell",
@@ -91,7 +91,17 @@ models = {
         "dir": "./ComfyUI/models/vae",
         "filename": "flux1-schnell.safetensors",
     },
-    # XLabs-AI/flux-RealismLora
+    # Lora Models
+    "XL Lego Brickheadz": {
+        "url": "nerijs/lego-brickheadz-xl",
+        "dir": "./ComfyUI/models/loras/",
+        "filename": "legobrickheadz-v1.0-000004.safetensors",
+    },
+    "LEGO Minifig XL": {
+        "url": "nerijs/lego-minifig-xl",
+        "dir": "./ComfyUI/models/loras/",
+        "filename": "legominifig-v1.0-000003.safetensors",
+    },
     "FLUX LoRAs Base": {
         "url": "XLabs-AI/flux-RealismLora",
         "dir": "./ComfyUI/models/loras",
@@ -126,6 +136,11 @@ models = {
         "url": "XLabs-AI/flux-lora-collection",
         "dir": "./ComfyUI/models/loras",
         "filename": "furry_lora.safetensors",
+    },
+    "Alien God SDXL": {
+        "url": "CiroN2022/alien-god",
+        "dir": "./ComfyUI/models/loras",
+        "filename": "Alien_God_sdxl.safetensors",
     },
     # GGUF Models for FLUX
     "GGUF Unet Q6_K": {

@@ -18,3 +18,8 @@ https://blog.comfy.org/sd3-5-comfyui/
 # AI Workflow Links:
 https://openaijourney.com/best-comfyui-workflows/
 https://github.com/comfyanonymous/ComfyUI_examples%  
+https://civitai.com/models
+
+
+# Best Img2Img --> 
+https://learn.thinkdiffusion.com/a-list-of-the-best-comfyui-workflows/#img2img-comfyui-workflow
