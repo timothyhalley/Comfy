@@ -8,6 +8,9 @@ rsync -avP --ignore-existing --exclude='.DS_Store' /Users/I850916/Projects/Comfy
 # On SSD —> MacMini:
 rsync -avP --ignore-existing --exclude='.DS_Store' /Volumes/MySSD/Project/Comfy/ComfyUI/models  /Users/timothyhalley/Projects/Comfy/ComfyUI/models
 
+# On SSD —> MBP:
+rsync -avP --ignore-existing --exclude='.DS_Store' /Volumes/MySSD/Project/Comfy/ComfyUI/models  /Users/I850916/Projects/Comfy/ComfyUI/models
+
 # Useful links and info:
 * Useful links for ComfyUI modeling
 
