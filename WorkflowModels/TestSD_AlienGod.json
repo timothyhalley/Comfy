@@ -1,0 +1,109 @@
+{
+    "nodes": [
+        {
+            "id": "clip_text_encode",
+            "type": "CLIPTextEncode",
+            "params": {
+                "text": "A stunning female alien with human-like features, ready for battle."
+            },
+            "label": "Positive Prompt"
+        },
+        {
+            "id": "clip_text_encode_negative",
+            "type": "CLIPTextEncode",
+            "params": {
+                "text": "ugly, deformed, grotesque, low quality, blurry, poorly drawn, extra limbs, missing limbs, disfigured, cartoonish, unrealistic, outdated armor, plain background, dull colors"
+            },
+            "label": "Negative Prompt"
+        },
+        {
+            "id": "load_checkpoint",
+            "type": "LoadCheckpoint",
+            "params": {
+                "checkpoint_name": "sd3.5_large_e4m3fn.safetensors"
+            },
+            "label": "Load Checkpoint"
+        },
+        {
+            "id": "lora_loader",
+            "type": "LoRALoader",
+            "params": {
+                "lora_name": "Alien_God_SDXL.safetensors"
+            },
+            "label": "Load LoRA Model"
+        },
+        {
+            "id": "vae_decode",
+            "type": "VAEDecode",
+            "label": "VAE Decode"
+        },
+        {
+            "id": "sd3_latent_image",
+            "type": "SD3LatentImage",
+            "params": {
+                "scale": 1024
+            },
+            "label": "Scale to 1024"
+        },
+        {
+            "id": "ksampler",
+            "type": "KSampler",
+            "params": {
+                "scheduler": "ddim",
+                "steps": 50,
+                "cfg_scale": 7.5,
+                "seed": 42
+            },
+            "label": "KSampler"
+        },
+        {
+            "id": "triple_clip_loader",
+            "type": "TripleClipLoader",
+            "label": "TripleClipLoader"
+        }
+    ],
+    "connections": [
+        {
+            "from": "clip_text_encode",
+            "to": "triple_clip_loader",
+            "output": "clip",
+            "input": "clip1"
+        },
+        {
+            "from": "clip_text_encode_negative",
+            "to": "triple_clip_loader",
+            "output": "clip",
+            "input": "clip2"
+        },
+        {
+            "from": "triple_clip_loader",
+            "to": "lora_loader",
+            "output": "clip",
+            "input": "clip"
+        },
+        {
+            "from": "load_checkpoint",
+            "to": "lora_loader",
+            "output": "model",
+            "input": "model"
+        },
+        {
+            "from": "lora_loader",
+            "to": "ksampler",
+            "output": "model",
+            "input": "model"
+        },
+        {
+            "from": "ksampler",
+            "to": "vae_decode",
+            "output": "latent",
+            "input": "latent"
+        },
+        {
+            "from": "vae_decode",
+            "to": "sd3_latent_image",
+            "output": "image",
+            "input": "image"
+        }
+    ]
+}

@@ -47,6 +47,6 @@ pip3 install --upgrade -r requirements.txt
 pip3 install --upgrade --pre torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/nightly/cpu
 
 # install and update huggingface hub library for downloads
-pip install --upgrade huggingface_hub
+pip3 install --upgrade huggingface_hub
 
-pip list
+pip3 list

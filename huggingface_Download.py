@@ -163,6 +163,17 @@ models = {
         "dir": "./ComfyUI/models/clip",
         "filename": "t5-v1_1-xxl-encoder-Q8_0.gguf",
     },
+    # IP Adaptor
+    "FLUX IP Adapter": {
+        "url": "XLabs-AI/flux-ip-adapter-v2",
+        "dir": "./ComfyUI/models/ipadapter",
+        "filename": "ip_adapter.safetensors",
+    },
+    "FLUX Clip Adapter": {
+        "url": "openai/clip-vit-large-patch14",
+        "dir": "./ComfyUI/models/clip",
+        "filename": "model.safetensors",
+    },
 }
 
 # Log in to Hugging Face
