@@ -2,15 +2,14 @@
 Comfy Scripts and Tools to use
 
 # Sync model directory with SSD:
-# On work MBP —> SSD:
-mkdir -p /Volumes/MySSD/Project/Comfy/ComfyUI/models 
-rsync -avP --ignore-existing --exclude='.*' /Users/I850916/Projects/Comfy/ComfyUI/models/ /Volumes/MySSD/Project/Comfy/ComfyUI/models/
+mkdir -p /Volumes/MySSD/Project/Comfy/ComfyUI/models
+rsync -avP --include='*/' --include='*.safetensors' --include='*.GGUF' --exclude='*' [Source] [Destination]
+rsync -avP --include='*/' --include='*.safetensors' --include='*.GGUF' --exclude='.cache/' --exclude='*' [Source] [Destination]
 
-# On SSD —> MacMini:
-rsync -avP --ignore-existing /Volumes/MySSD/Project/Comfy/ComfyUI/models  /Users/timothyhalley/Projects/Comfy/ComfyUI/models
 
-# On SSD —> MBP:
-rsync -avP --ignore-existing /Volumes/MySSD/Project/Comfy/ComfyUI/models  /Users/I850916/Projects/Comfy/ComfyUI/models
+MBP: /Users/I850916/Projects/Comfy/ComfyUI/models/
+MAC Mini1: ~/Projects/Comfy/ComfyUI/models
+SSD: /Volumes/MySSD/Project/Comfy/ComfyUI/models/
 
 # Useful links and info:
 * Useful links for ComfyUI modeling
