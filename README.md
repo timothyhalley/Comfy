@@ -6,9 +6,12 @@ mkdir -p /Volumes/MySSD/Project/Comfy/ComfyUI/models
 rsync -avP --include='*/' --include='*.safetensors' --include='*.GGUF' --exclude='*' [Source] [Destination]
 rsync -avP --include='*/' --include='*.safetensors' --include='*.GGUF' --exclude='.cache/' --exclude='*' [Source] [Destination]
 
+# Delete .cache directories in sub folders:
+find /path/to/directory -type d -name ".cache" -exec rm -rf {} +
+
 
 MBP: /Users/I850916/Projects/Comfy/ComfyUI/models/
-MAC Mini1: ~/Projects/Comfy/ComfyUI/models
+MAC Mini1: ~/Projects/Comfy/ComfyUI/models/
 SSD: /Volumes/MySSD/Project/Comfy/ComfyUI/models/
 
 # Useful links and info:

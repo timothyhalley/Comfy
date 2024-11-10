@@ -24,6 +24,22 @@ models = {
         "dir": "./ComfyUI/models/checkpoints/",
         "filename": "sd3.5_medium.safetensors",
     },
+    "SD XL Refiner 1.0": {
+        "url": "stabilityai/stable-diffusion-xl-refiner-1.0",
+        "dir": "./ComfyUI/models/checkpoints/",
+        "filename": "sd_xl_refiner_1.0_0.9vae.safetensors",
+    },
+    "Epic Realism RC1": {
+        "url": "Justin-Choo/epiCRealism-Natural_Sin_RC1_VAE",
+        "dir": "./ComfyUI/models/checkpoints/",
+        "filename": "epicrealism_naturalSinRC1VAE.safetensors",
+    },
+    "Photon AI": {
+        "url": "WALIDALI/lcmphoton",
+        "dir": "./ComfyUI/models/checkpoints/",
+        "filename": "photonLCM_v10.safetensors",
+    },
+    # Clip Models
     "SD3.5 Diffusion Text Encoder - G": {
         "url": "stabilityai/stable-diffusion-3-medium",
         "dir": "./ComfyUI/models/clip/",
@@ -38,11 +54,6 @@ models = {
         "url": "stabilityai/stable-diffusion-3-medium",
         "dir": "./ComfyUI/models/clip/",
         "filename": "text_encoders/t5xxl_fp16.safetensors",
-    },
-    "SD XL Refiner 1.0": {
-        "url": "stabilityai/stable-diffusion-xl-refiner-1.0",
-        "dir": "./ComfyUI/models/checkpoints/",
-        "filename": "sd_xl_refiner_1.0_0.9vae.safetensors",
     },
     "SDXL VAE": {
         "url": "stabilityai/sdxl-vae",
@@ -80,6 +91,11 @@ models = {
         "dir": "./ComfyUI/models/controlnet",
         "filename": "v2/control_v1p_sd15_qrcode_monster_v2.safetensors",
     },
+    "LineArt FP16": {
+        "url": "comfyanonymous/ControlNet-v1-1_fp16_safetensors",
+        "dir": "./ComfyUI/models/controlnet",
+        "filename": "control_v11p_sd15_lineart_fp16.safetensors",
+    },
     # VAE
     "FLUX VAE": {
         "url": "black-forest-labs/FLUX.1-schnell",
@@ -90,6 +106,11 @@ models = {
         "url": "black-forest-labs/FLUX.1-schnell",
         "dir": "./ComfyUI/models/vae",
         "filename": "flux1-schnell.safetensors",
+    },
+    "SD VAE MAE": {
+        "url": "stabilityai/sd-vae-ft-mse-original",
+        "dir": "./ComfyUI/models/vae",
+        "filename": "vae-ft-mse-840000-ema-pruned.safetensors",
     },
     # Lora Models
     "XL Lego Brickheadz": {
@@ -141,6 +162,16 @@ models = {
         "url": "CiroN2022/alien-god",
         "dir": "./ComfyUI/models/loras",
         "filename": "Alien_God_sdxl.safetensors",
+    },
+    "AnimateDiff Lora": {
+        "url": "camenduru/AnimateDiff",
+        "dir": "./ComfyUI/models/animatediff_motion_lora",
+        "filename": "v2_lora_ZoomIn.ckpt",
+    },
+    "AnimateLCM TV2 Beta": {
+        "url": "wangfuyun/AnimateLCM",
+        "dir": "./ComfyUI/models/animatediff_motion_lora",
+        "filename": "AnimateLCM_sd15_t2v_lora.safetensors",
     },
     # GGUF Models for FLUX
     "GGUF Unet Q6_K": {
