@@ -37,6 +37,7 @@ git clone https://github.com/cubiq/ComfyUI_IPAdapter_plus.git
 # Open the ComfyUI Manager.
 # Select the Custom Nodes Manager.
 # Search for “crystools” and install it.
+git clone https://github.com/crystian/ComfyUI-Crystools.git
 
 
 # Update all requirements manually
@@ -50,3 +51,36 @@ pip3 install --upgrade --pre torch torchvision torchaudio --extra-index-url http
 pip3 install --upgrade huggingface_hub
 
 pip3 list
+
+# Modify the YAML file:
+#!/bin/zsh
+
+# Define the directory and file path
+dir_path="./ComfyUI"
+file_path="$dir_path/extra_model_paths.yaml"
+
+# Create the directory if it doesn't exist
+#mkdir -p $dir_path
+
+# Create and write content to the file
+cat <<EOL > $file_path
+comfyui:
+    base_path: /Volumes/MySSD/ComfyUI/
+    # You can use is_default to mark that these folders should be listed first, and used as the default dirs for eg downloads
+    #is_default: true
+    checkpoints: models/checkpoints/
+    clip: models/clip/
+    clip_vision: models/clip_vision/
+    configs: models/configs/
+    controlnet: models/controlnet/
+    diffusion_models: |
+        models/diffusion_models
+        models/unet
+    embeddings: models/embeddings/
+    loras: models/loras/
+    upscale_models: models/upscale_models/
+    vae: models/vae/
+EOL
+
+# Inform the user
+echo "File 'extra_model_paths.yaml' created in './ComfyUI' directory with specified content."

@@ -2,6 +2,7 @@
 ComfyUI/
 Media/
 Workflows/
+WorkflowImages/
 
 # macOS files
 .DS_Store
