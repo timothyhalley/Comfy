@@ -25,10 +25,17 @@ https://blog.comfy.org/sd3-5-comfyui/
 https://openaijourney.com/best-comfyui-workflows/
 https://github.com/comfyanonymous/ComfyUI_examples%  
 https://civitai.com/models
+https://comfyanonymous.github.io/ComfyUI_examples/ 
+
 
 
 # Best Img2Img --> 
 https://learn.thinkdiffusion.com/a-list-of-the-best-comfyui-workflows/#img2img-comfyui-workflow
+
+# Best Img2Vid -->
+https://comfyanonymous.github.io/ComfyUI_examples/mochi/
+https://huggingface.co/genmo/mochi-1-preview
+
 
 
 # Prompt for alien:
