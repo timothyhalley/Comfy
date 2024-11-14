@@ -52,17 +52,16 @@ pip3 install --upgrade huggingface_hub
 
 pip3 list
 
-# Modify the YAML file:
-#!/bin/zsh
-
+# Modify the YAML file to locate single model directory
 # Define the directory and file path
-dir_path="./ComfyUI"
+dir_path="."
 file_path="$dir_path/extra_model_paths.yaml"
 
 # Create the directory if it doesn't exist
-#mkdir -p $dir_path
+mkdir -p $dir_path
 
 # Create and write content to the file
+echo "FILE CFG: $file_path"
 cat <<EOL > $file_path
 comfyui:
     base_path: /Volumes/MySSD/ComfyUI/
@@ -83,4 +82,5 @@ comfyui:
 EOL
 
 # Inform the user
-echo "File 'extra_model_paths.yaml' created in './ComfyUI' directory with specified content."
+cat $file_path
+
