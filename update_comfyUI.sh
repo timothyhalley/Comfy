@@ -28,7 +28,9 @@ cd custom_nodes
 git clone https://github.com/ltdrdata/ComfyUI-Manager.git
 
 # Other nodes
-git clone https://github.com/cubiq/ComfyUI_IPAdapter_plus.git
+#git clone https://github.com/cubiq/ComfyUI_IPAdapter_plus.git
+# git clone https://github.com/XLabs-AI/x-flux-comfyui.git
+git clone https://github.com/city96/ComfyUI-GGUF.git
 
 # Manager Nodes
 # Install / Add: ComfyUI Impact Pack
@@ -43,6 +45,7 @@ git clone https://github.com/crystian/ComfyUI-Crystools.git
 # Update all requirements manually
 cd ~/Projects/Comfy/ComfyUI
 pip3 install --upgrade -r requirements.txt
+pip3 install --upgrade gguf
 
 # make sure latest pyTorch
 pip3 install --upgrade --pre torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/nightly/cpu

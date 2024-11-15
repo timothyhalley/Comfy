@@ -256,6 +256,14 @@ models = {
         "filename": "model.safetensors",
         "checksum": "a2bf730a0c7debf160f7a6b50b3aaf3703e7e88ac73de7a314903141db026dcb",
     },
+    # Clip Vision Model(s)
+    # "Clip Vision by comfyanonymous": {
+    #     "url": "comfyanonymous/clip_vision_g",
+    #     "dir": f"{base_path}/models/clip_vision",
+    #     "revision": "",
+    #     "filename": "clip_vision_g.safetensors",
+    #     "checksum": "9908329b3ead722a693ea400fab1d7c9ec91d6736fd194a94d20d793457f9c2e",
+    # },
 }
 
 # Log in to Hugging Face
