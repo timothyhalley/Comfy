@@ -40,12 +40,14 @@ git clone https://github.com/city96/ComfyUI-GGUF.git
 # Select the Custom Nodes Manager.
 # Search for “crystools” and install it.
 git clone https://github.com/crystian/ComfyUI-Crystools.git
-
+cd ~/Projects/Comfy/ComfyUI/custom_nodes/ComfyUI-Crystools
+pip3 install --upgrade -r requirements.txt
 
 # Update all requirements manually
 cd ~/Projects/Comfy/ComfyUI
 pip3 install --upgrade -r requirements.txt
 pip3 install --upgrade gguf
+
 
 # make sure latest pyTorch
 pip3 install --upgrade --pre torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/nightly/cpu
