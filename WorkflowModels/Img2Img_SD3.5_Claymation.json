@@ -1,0 +1,335 @@
+{
+    "last_node_id": 8,
+    "last_link_id": 16,
+    "nodes": [
+        {
+            "id": 1,
+            "type": "ImageInput",
+            "pos": {
+                "0": 126,
+                "1": 126
+            },
+            "size": {
+                "0": 200,
+                "1": 100
+            },
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "parameters": {
+                "image_path": "path_to_your_input_image.png"
+            },
+            "outputs": [
+                {
+                    "name": "IMAGE",
+                    "type": "IMAGE",
+                    "links": [
+                        1
+                    ],
+                    "slot_index": 0,
+                    "shape": 3
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "ImageResize",
+            "pos": {
+                "0": 426,
+                "1": 126
+            },
+            "size": {
+                "0": 200,
+                "1": 100
+            },
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "parameters": {
+                "scale_factor": 0.5
+            },
+            "inputs": [
+                {
+                    "name": "image",
+                    "type": "IMAGE",
+                    "link": 1,
+                    "slot_index": 0
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "IMAGE",
+                    "type": "IMAGE",
+                    "links": [
+                        2
+                    ],
+                    "slot_index": 0,
+                    "shape": 3
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "StableDiffusionModel",
+            "pos": {
+                "0": 726,
+                "1": 126
+            },
+            "size": {
+                "0": 200,
+                "1": 100
+            },
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "parameters": {
+                "model_path": "path_to_stable_diffusion_v3_5.ckpt",
+                "precision": "fp16"
+            },
+            "inputs": [
+                {
+                    "name": "image",
+                    "type": "IMAGE",
+                    "link": 2,
+                    "slot_index": 0
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "LATENT",
+                    "type": "LATENT",
+                    "links": [
+                        3
+                    ],
+                    "slot_index": 0,
+                    "shape": 3
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "LoRALoader",
+            "pos": {
+                "0": 1026,
+                "1": 126
+            },
+            "size": {
+                "0": 200,
+                "1": 100
+            },
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "parameters": {
+                "lora_path": "path_to_lora.safetensors",
+                "alpha": 1.0
+            },
+            "inputs": [
+                {
+                    "name": "latent",
+                    "type": "LATENT",
+                    "link": 3,
+                    "slot_index": 0
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "LATENT",
+                    "type": "LATENT",
+                    "links": [
+                        4
+                    ],
+                    "slot_index": 0,
+                    "shape": 3
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "ImageToImage",
+            "pos": {
+                "0": 1326,
+                "1": 126
+            },
+            "size": {
+                "0": 200,
+                "1": 100
+            },
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "parameters": {
+                "strength": 0.75,
+                "denoising_strength": 0.5
+            },
+            "inputs": [
+                {
+                    "name": "latent",
+                    "type": "LATENT",
+                    "link": 4,
+                    "slot_index": 0
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "IMAGE",
+                    "type": "IMAGE",
+                    "links": [
+                        5
+                    ],
+                    "slot_index": 0,
+                    "shape": 3
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "type": "ClaymationEffect",
+            "pos": {
+                "0": 1626,
+                "1": 126
+            },
+            "size": {
+                "0": 200,
+                "1": 100
+            },
+            "flags": {},
+            "order": 5,
+            "mode": 0,
+            "parameters": {},
+            "inputs": [
+                {
+                    "name": "image",
+                    "type": "IMAGE",
+                    "link": 5,
+                    "slot_index": 0
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "IMAGE",
+                    "type": "IMAGE",
+                    "links": [
+                        6
+                    ],
+                    "slot_index": 0,
+                    "shape": 3
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "type": "ImageUpscale",
+            "pos": {
+                "0": 1926,
+                "1": 126
+            },
+            "size": {
+                "0": 200,
+                "1": 100
+            },
+            "flags": {},
+            "order": 6,
+            "mode": 0,
+            "parameters": {
+                "scale_factor": 2.0
+            },
+            "inputs": [
+                {
+                    "name": "image",
+                    "type": "IMAGE",
+                    "link": 6,
+                    "slot_index": 0
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "IMAGE",
+                    "type": "IMAGE",
+                    "links": [
+                        7
+                    ],
+                    "slot_index": 0,
+                    "shape": 3
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "type": "ImageOutput",
+            "pos": {
+                "0": 2226,
+                "1": 126
+            },
+            "size": {
+                "0": 200,
+                "1": 100
+            },
+            "flags": {},
+            "order": 7,
+            "mode": 0,
+            "parameters": {
+                "output_path": "path_to_your_output_image.png"
+            },
+            "inputs": [
+                {
+                    "name": "image",
+                    "type": "IMAGE",
+                    "link": 7,
+                    "slot_index": 0
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "from": "input_image",
+            "to": "resize_image"
+        },
+        {
+            "from": "resize_image",
+            "to": "stable_diffusion_v3_5"
+        },
+        {
+            "from": "stable_diffusion_v3_5",
+            "to": "controlnet_lora"
+        },
+        {
+            "from": "controlnet_lora",
+            "to": "image_to_image"
+        },
+        {
+            "from": "image_to_image",
+            "to": "claymation_filter"
+        },
+        {
+            "from": "claymation_filter",
+            "to": "upscale_image"
+        },
+        {
+            "from": "upscale_image",
+            "to": "output_image"
+        }
+    ],
+    "groups": [],
+    "config": {},
+    "extra": {
+        "ds": {
+            "scale": 1.0,
+            "offset": [
+                0,
+                0
+            ]
+        },
+        "info": {
+            "name": "Img2Img_SD3.5_Claymation",
+            "author": "",
+            "description": "",
+            "version": "1",
+            "created": "2024-11-11T16:57:27.431Z",
+            "modified": "2024-11-11T22:13:51.697Z",
+            "software": "ComfyUI"
+        }
+    },
+    "version": 0.4
+}
