@@ -19,7 +19,7 @@ models = {
         "filename": "v2-1_768-ema-pruned.safetensors",
         "checksum": "dcd690123cfc64383981a31d955694f6acf2072a80537fdb612c8e58ec87a8ac",
     },
-    "ComfyOrg Flux1": {
+    "ComfyOrg Flux1 FP8": {
         "url": "Comfy-Org/flux1-dev",
         "dir": f"{base_path}/models/controlnet/",
         "revision": "main",
@@ -39,6 +39,21 @@ models = {
         "revision": "main",
         "filename": "v2_lora_ZoomIn.ckpt",
         "checksum": "70ce8b9057b173b9249c48aca5d66c8aa1d8aaa040fda394e50e37f3e278195e",
+    },
+    # CheckPoint Folder:
+    "Juggernaut XLv6": {
+        "url": "RunDiffusion/Juggernaut-XL-v6",
+        "dir": f"{base_path}/models/checkpoints/",
+        "revision": "main",
+        "filename": "juggernautXL_version6Rundiffusion.safetensors",
+        "checksum": "1fe6c7ec54c786040cdabc7b4e89720069d97096922e20d01f13e7764412b47f",
+    },
+    "Juggernaut XLv8": {
+        "url": "RunDiffusion/Juggernaut-XL-v8",
+        "dir": f"{base_path}/models/checkpoints/",
+        "revision": "main",
+        "filename": "juggernautXL_v8Rundiffusion.safetensors",
+        "checksum": "aeb7e9e6897a1e58b10494bd989d001e3d4bc9b634633cd7b559838f612c2867",
     },
     "Think XL": {
         "url": "ThinkDiffusion/ThinkDiffusionXL",
@@ -140,6 +155,13 @@ models = {
         "checksum": "4610115bb0c89560703c892c59ac2742fa821e60ef5871b33493ba544683abd7",
     },
     # ControlNet Models
+    "Canny SDXL": {
+        "url": "diffusers/controlnet-canny-sdxl-1.0",
+        "dir": f"{base_path}/models/controlnet",
+        "revision": "main",
+        "filename": "diffusion_pytorch_model.fp16.safetensors",
+        "checksum": "b2e7d3921058a442cc80430d1ec8847f42599c705e2451c95e77cf4dcf8d6c25",
+    },
     "FLUX Diff": {
         "url": "Shakker-Labs/FLUX.1-dev-ControlNet-Union-Pro",
         "dir": f"{base_path}/models/controlnet",
@@ -176,6 +198,13 @@ models = {
         "checksum": "fc985da5850a03033c9e28032532f406ae04bd127178ae5bc6d3ec0502b25253",
     },
     # VAE
+    "SDXL-VAE Diff": {
+        "url": "stabilityai/sdxl-vae",
+        "dir": f"{base_path}/models/vae",
+        "revision": "main",
+        "filename": "diffusion_pytorch_model.safetensors",
+        "checksum": "1598f3d24932bcfe6634e8b618ea1e30ab1d57f5aad13a6d2de446d2199f2341",
+    },
     "Mochi": {
         "url": "Comfy-Org/mochi_preview_repackaged",
         "dir": f"{base_path}/models/vae",
@@ -198,6 +227,20 @@ models = {
         "checksum": "735e4c3a447a3255760d7f86845f09f937809baa529c17370d83e4c3758f3c75",
     },
     # Lora Models
+    "FluxRealismLora": {
+        "url": "XLabs-AI/flux-lora-collection",
+        "dir": f"{base_path}/models/loras",
+        "revision": "",
+        "filename": "realism_lora.safetensors",
+        "checksum": "0a83a924b822b70b5e458d27935ebfa7713edaee04ff9f194209525354031eca",
+    },
+    "Flux Scenery": {
+        "url": "XLabs-AI/flux-lora-collection",
+        "dir": f"{base_path}/models/loras",
+        "revision": "",
+        "filename": "scenery_lora.safetensors",
+        "checksum": "1956be0c699aaa7f806c35d0e4e9aa94b72d54f9c841a4fc40b876692e4ed756",
+    },
     "Lego Brickheadz": {
         "url": "nerijs/lego-brickheadz-xl",
         "dir": f"{base_path}/models/loras/",
@@ -205,7 +248,7 @@ models = {
         "filename": "legobrickheadz-v1.0-000004.safetensors",
         "checksum": "723b7fc7e7c599f0f6f8252ce12cde266fbc078fe316e262d2d5955903389d13",
     },
-    "FLUX Base": {
+    "FLUX Realism": {
         "url": "XLabs-AI/flux-RealismLora",
         "dir": f"{base_path}/models/loras",
         "revision": "",
@@ -327,6 +370,13 @@ models = {
         "checksum": "a2bf730a0c7debf160f7a6b50b3aaf3703e7e88ac73de7a314903141db026dcb",
     },
     # Clip Vision Model(s)
+    "Clip Vision H": {
+        "url": "lllyasviel/misc",
+        "dir": f"{base_path}/models/clip",
+        "revision": "main",
+        "filename": "clip_vision_vit_h.safetensors",
+        "checksum": "a2bf730a0c7debf160f7a6b50b3aaf3703e7e88ac73de7a314903141db026dcb",
+    },
     # "Clip Vision by comfyanonymous": {
     #     "url": "comfyanonymous/clip_vision_g",
     #     "dir": f"{base_path}/models/clip_vision",

@@ -32,13 +32,15 @@ git clone https://github.com/ltdrdata/ComfyUI-Manager.git
 # git clone https://github.com/XLabs-AI/x-flux-comfyui.git
 git clone https://github.com/city96/ComfyUI-GGUF.git
 
-# Manager Nodes
-# Install / Add: ComfyUI Impact Pack
+git clone https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git
 
-# Custom Node for CPU and Memory
-# Open the ComfyUI Manager.
-# Select the Custom Nodes Manager.
-# Search for “crystools” and install it.
+##
+git clone https://github.com/smthemex/ComfyUI_StoryDiffusion.git
+cd ~/Projects/Comfy/ComfyUI/custom_nodes/ComfyUI_StoryDiffusion
+pip3 install --upgrade -r requirements.txt
+cd ~/Projects/Comfy/ComfyUI/custom_nodes
+
+# Manager Nodes
 git clone https://github.com/crystian/ComfyUI-Crystools.git
 cd ~/Projects/Comfy/ComfyUI/custom_nodes/ComfyUI-Crystools
 pip3 install --upgrade -r requirements.txt
