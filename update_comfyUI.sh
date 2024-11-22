@@ -39,6 +39,12 @@ git clone https://github.com/smthemex/ComfyUI_StoryDiffusion.git
 cd ~/Projects/Comfy/ComfyUI/custom_nodes/ComfyUI_StoryDiffusion
 pip3 install --upgrade -r requirements.txt
 cd ~/Projects/Comfy/ComfyUI/custom_nodes
+git clone https://github.com/pythongosssss/ComfyUI-WD14-Tagger.git
+
+# Image Tagger 
+cd ~/Projects/Comfy/ComfyUI/custom_nodes/ComfyUI-WD14-Tagger
+pip3 install --upgrade -r requirements.txt
+cd ~/Projects/Comfy/ComfyUI/custom_nodes
 
 # Manager Nodes
 git clone https://github.com/crystian/ComfyUI-Crystools.git

@@ -26,7 +26,7 @@ https://openaijourney.com/best-comfyui-workflows/
 https://github.com/comfyanonymous/ComfyUI_examples%  
 https://civitai.com/models
 https://comfyanonymous.github.io/ComfyUI_examples/ 
-
+https://tensor.art/workflows
 
 
 # Best Img2Img --> 

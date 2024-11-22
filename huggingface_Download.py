@@ -149,7 +149,7 @@ models = {
     },
     "FLUX 1 DEV": {
         "url": "black-forest-labs/FLUX.1-dev",
-        "dir": f"{base_path}/models/unet/",
+        "dir": f"{base_path}/models/checkpoints/",
         "revision": "",
         "filename": "flux1-dev.safetensors",
         "checksum": "4610115bb0c89560703c892c59ac2742fa821e60ef5871b33493ba544683abd7",
