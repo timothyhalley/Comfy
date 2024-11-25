@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-TARGET_DIR="/Volumes/MySSD/Project/Comfy/ComfyUI/models"
+TARGET_DIR="/Volumes/MySSD/ComfyUI/models"
 
 for dir in "$TARGET_DIR"/*/; do
   size=$(du -sh "$dir" | cut -f1)

@@ -15,6 +15,9 @@
 
 pyenv global
 
+export PYTORCH_ENABLE_MPS_FALLBACK=1
+
+
 # Install comfyUI from git repo
 cd ~/Projects/Comfy
 git clone https://github.com/comfyanonymous/ComfyUI.git
@@ -33,6 +36,11 @@ git clone https://github.com/ltdrdata/ComfyUI-Manager.git
 git clone https://github.com/city96/ComfyUI-GGUF.git
 
 git clone https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git
+git clone https://github.com/twri/sdxl_prompt_styler.git
+git clone https://github.com/TripleHeadedMonkey/ComfyUI_MileHighStyler
+
+`git clone https://github.com/BlenderNeko/ComfyUI_Noise`
+
 
 ##
 git clone https://github.com/smthemex/ComfyUI_StoryDiffusion.git
@@ -87,7 +95,7 @@ comfyui:
     clip_vision: models/clip_vision/
     configs: models/configs/
     controlnet: models/controlnet/
-    diffusion_models: |
+    diffusion_models: |cd C
         models/diffusion_models
         models/unet
     embeddings: models/embeddings/

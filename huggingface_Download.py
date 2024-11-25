@@ -12,6 +12,41 @@ base_path = "/Volumes/MySSD/ComfyUI"
 
 # List of model URLs and their corresponding directories
 models = {
+    "Clay Animation": {
+        "url": "Renqf/sd",
+        "dir": f"{base_path}/models/checkpoints/",
+        "revision": "main",
+        "filename": "revAnimated_v122.safetensors",
+        "checksum": "4199bcdd147e11328d5f3560301d5a7ab4ac7eeefbf49dc3eb663cb3e772b9ac",
+    },
+    "SDXL 1.0 Canny": {
+        "url": "webui/ControlNet-modules-safetensors",
+        "dir": f"{base_path}/models/controlnet/",
+        "revision": "main",
+        "filename": "control_canny-fp16.safetensors",
+        "checksum": "f2549278df9a7b3d7a6058f6cedb0ccf2ff09118054a0f7e6940bd6bcfa98557",
+    },
+    "SDXL 1.0 Base": {
+        "url": "stabilityai/stable-diffusion-xl-base-1.0",
+        "dir": f"{base_path}/models/checkpoints/",
+        "revision": "main",
+        "filename": "sd_xl_base_1.0.safetensors",
+        "checksum": "31e35c80fc4829d14f90153f4c74cd59c90b779f6afe05a74cd6120b893f7e5b",
+    },
+    "SargeZT Depth 16": {
+        "url": "SargeZT/controlnet-sd-xl-1.0-depth-16bit-zoe",
+        "dir": f"{base_path}/models/controlnet/",
+        "revision": "main",
+        "filename": "depth-zoe-xl-v1.0-controlnet.safetensors",
+        "checksum": "d845de25bed0f105415c4e7d92113e42fbefb5b1b793a3428901727d1f0b00a9",
+    },
+    "Sketch Model": {
+        "url": "webui/ControlNet-modules-safetensors",
+        "dir": f"{base_path}/models/controlnet/",
+        "revision": "main",
+        "filename": "t2iadapter_sketch-fp16.safetensors",
+        "checksum": "d3c2a337a568f107a6fa30bae3c8a84256ac301a5ddf5d6b2e53718f14ab549a",
+    },
     "v2-1_768-ema-pruned": {
         "url": "stabilityai/stable-diffusion-2-1",
         "dir": f"{base_path}/models/checkpoints/",
@@ -32,6 +67,13 @@ models = {
         "revision": "main",
         "filename": "4x-ClearRealityV1.pth",
         "checksum": "a4cd3a25b00e0be949d4302fc774eb4d7f2ed5f47cdb51551e2d75fa6562e51e",
+    },
+    "4x-UltraSharp": {
+        "url": "Kim2091/UltraSharp",
+        "dir": f"{base_path}/models/upscale_models",
+        "revision": "main",
+        "filename": "4x-UltraSharp.pth",
+        "checksum": "a5812231fc936b42af08a5edba784195495d303d5b3248c24489ef0c4021fe01",
     },
     "v2_lora_ZoomIn2": {
         "url": "camenduru/AnimateDiff",
@@ -150,7 +192,7 @@ models = {
     "FLUX 1 DEV": {
         "url": "black-forest-labs/FLUX.1-dev",
         "dir": f"{base_path}/models/checkpoints/",
-        "revision": "",
+        "revision": "main",
         "filename": "flux1-dev.safetensors",
         "checksum": "4610115bb0c89560703c892c59ac2742fa821e60ef5871b33493ba544683abd7",
     },
@@ -227,6 +269,34 @@ models = {
         "checksum": "735e4c3a447a3255760d7f86845f09f937809baa529c17370d83e4c3758f3c75",
     },
     # Lora Models
+    "SDXL Photo-Slider": {
+        "url": "ostris/photorealistic-slider-sdxl-lora",
+        "dir": f"{base_path}/models/loras",
+        "revision": "main",
+        "filename": "sdxl_photorealistic_slider_v1-0.safetensors",
+        "checksum": "2764f1f25ee63df2ad7685b73572fce19593086b967a67c61e75ff6353746224",
+    },
+    "SDXL Neg4All": {
+        "url": "GraydientPlatformAPI/misc",
+        "dir": f"{base_path}/models/loras",
+        "revision": "main",
+        "filename": "neg4all_bdsqlsz_xl_V91.safetensors",
+        "checksum": "aa07aba2a50abf30f0936d87dc8620d3ba8b5faa437b2339894d66f391b794b5",
+    },
+    "SDXL Offset 1.0": {
+        "url": "stabilityai/stable-diffusion-xl-base-1.0",
+        "dir": f"{base_path}/models/loras",
+        "revision": "main",
+        "filename": "sd_xl_offset_example-lora_1.0.safetensors",
+        "checksum": "4852686128f953d0277d0793e2f0335352f96a919c9c16a09787d77f55cbdf6f",
+    },
+    "LCM SDXL": {
+        "url": "latent-consistency/lcm-lora-sdxl",
+        "dir": f"{base_path}/models/loras",
+        "revision": "main",
+        "filename": "pytorch_lora_weights.safetensors",
+        "checksum": "a764e6859b6e04047cd761c08ff0cee96413a8e004c9f07707530cd776b19141",
+    },
     "FluxRealismLora": {
         "url": "XLabs-AI/flux-lora-collection",
         "dir": f"{base_path}/models/loras",
@@ -322,7 +392,7 @@ models = {
         "url": "2vXpSwA7/iroiro-lora",
         "dir": f"{base_path}/models/loras",
         "revision": "main",
-        "filename": "sdxl/sdxl-eye_bigeye.safetensors",
+        "filename": "sdxl-eye_bigeye.safetensors",
         "checksum": "f60c5f29a44c548a18908035c747bee17c6816c5a49eeca8d9dddadbc7bad636",
     },
     "Monster SD V2": {
@@ -375,7 +445,7 @@ models = {
         "dir": f"{base_path}/models/clip",
         "revision": "main",
         "filename": "clip_vision_vit_h.safetensors",
-        "checksum": "a2bf730a0c7debf160f7a6b50b3aaf3703e7e88ac73de7a314903141db026dcb",
+        "checksum": "9a11c14945fb98c7ac9a54fab5e498885731a0780260dad7adf41f6f59655ee5",
     },
     # "Clip Vision by comfyanonymous": {
     #     "url": "comfyanonymous/clip_vision_g",
