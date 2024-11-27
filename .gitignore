@@ -1,8 +1,7 @@
-# ComfyUI
+# Comfy App Folders
 ComfyUI/
-Media/
-Workflows/
-WorkflowImages/
+ComfyDT/
+ComfyIO/
 
 # macOS files
 .DS_Store
