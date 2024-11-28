@@ -10,9 +10,9 @@ rsync -avP --include='*/' --include='*.safetensors' --include='*.GGUF' --exclude
 find /path/to/directory -type d -name ".cache" -exec rm -rf {} +
 
 
-MBP: /Users/I850916/Projects/Comfy/ComfyUI/models/
-MAC Mini1: ~/Projects/Comfy/ComfyUI/models/
-SSD: /Volumes/MySSD/Project/Comfy/ComfyUI/models/
+MBP: /Users/I850916/Projects/Comfy/ComfyUI//Volumes/MySSD/ComfyUI/models/
+MAC Mini1: ~/Projects/Comfy/ComfyUI//Volumes/MySSD/ComfyUI/models/
+SSD: /Volumes/MySSD/Project/Comfy/ComfyUI//Volumes/MySSD/ComfyUI/models/
 
 # Useful links and info:
 * Useful links for ComfyUI modeling
