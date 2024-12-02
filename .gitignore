@@ -3,6 +3,9 @@ ComfyUI/
 ComfyDT/
 ComfyIO/
 
+# VSCode
+.vscode/
+
 # macOS files
 .DS_Store
 
