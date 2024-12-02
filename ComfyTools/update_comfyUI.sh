@@ -87,21 +87,21 @@ mkdir -p $dir_path
 echo "FILE CFG: $file_path"
 cat <<EOL > $file_path
 comfyui:
-    base_path: /Volumes/MySSD/ComfyUI/
+    BASE_PATH: /Volumes/MySSD/ComfyUI/
     # You can use is_default to mark that these folders should be listed first, and used as the default dirs for eg downloads
     #is_default: true
-    checkpoints: /Volumes/MySSD/ComfyUI/models/checkpoints/
-    clip: /Volumes/MySSD/ComfyUI/models/clip/
-    clip_vision: /Volumes/MySSD/ComfyUI/models/clip_vision/
-    configs: /Volumes/MySSD/ComfyUI/models/configs/
-    controlnet: /Volumes/MySSD/ComfyUI/models/controlnet/
+    checkpoints: /Volumes/MySSD/ComfyUI//Volumes/MySSD/ComfyUI/models/checkpoints/
+    clip: /Volumes/MySSD/ComfyUI//Volumes/MySSD/ComfyUI/models/clip/
+    clip_vision: /Volumes/MySSD/ComfyUI//Volumes/MySSD/ComfyUI/models/clip_vision/
+    configs: /Volumes/MySSD/ComfyUI//Volumes/MySSD/ComfyUI/models/configs/
+    controlnet: /Volumes/MySSD/ComfyUI//Volumes/MySSD/ComfyUI/models/controlnet/
     diffusion_models: |cd C
-        /Volumes/MySSD/ComfyUI/models/diffusion_models
-        /Volumes/MySSD/ComfyUI/models/unet
-    embeddings: /Volumes/MySSD/ComfyUI/models/embeddings/
-    loras: /Volumes/MySSD/ComfyUI/models/loras/
-    upscale_models: /Volumes/MySSD/ComfyUI/models/upscale_/Volumes/MySSD/ComfyUI/models/
-    vae: /Volumes/MySSD/ComfyUI/models/vae/
+        /Volumes/MySSD/ComfyUI//Volumes/MySSD/ComfyUI/models/diffusion_models
+        /Volumes/MySSD/ComfyUI//Volumes/MySSD/ComfyUI/models/unet
+    embeddings: /Volumes/MySSD/ComfyUI//Volumes/MySSD/ComfyUI/models/embeddings/
+    loras: /Volumes/MySSD/ComfyUI//Volumes/MySSD/ComfyUI/models/loras/
+    upscale_models: /Volumes/MySSD/ComfyUI//Volumes/MySSD/ComfyUI/models/upscale_/Volumes/MySSD/ComfyUI//Volumes/MySSD/ComfyUI/models/
+    vae: /Volumes/MySSD/ComfyUI//Volumes/MySSD/ComfyUI/models/vae/
 EOL
 
 # Inform the user

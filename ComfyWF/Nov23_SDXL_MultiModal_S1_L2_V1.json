@@ -361,7 +361,7 @@
                 "text": ""
             },
             "widgets_values": [
-                "Comfyroll SDXL Workflow Templates\nhttps://civitai.com//Volumes/MySSD/ComfyUI/models/118005/comfyroll-sdxl-workflow-templates\n\nThis template can be used with any SDXL model.\nIt is not recommended to use SD 1.5 models with this template.\n\nRequires:\nWAS Custom Nodes\nhttps://civitai.com//Volumes/MySSD/ComfyUI/models/20793/was-node-suite-comfyui\nComfyroll Custom Nodes\nhttps://civitai.com//Volumes/MySSD/ComfyUI/models/87609/comfyroll-custom-nodes-for-comfyui\nSearge SDXL Nodes\nhttps://civitai.com//Volumes/MySSD/ComfyUI/models/111463\nSDXL Mile High Styler\nhttps://civitai.com//Volumes/MySSD/ComfyUI/models/119246\n\nAugust 2023\nAkatsuzi\n"
+                "Comfyroll SDXL Workflow Templates\nhttps://civitai.com/models/118005/comfyroll-sdxl-workflow-templates\n\nThis template can be used with any SDXL model.\nIt is not recommended to use SD 1.5 models with this template.\n\nRequires:\nWAS Custom Nodes\nhttps://civitai.com/models/20793/was-node-suite-comfyui\nComfyroll Custom Nodes\nhttps://civitai.com/models/87609/comfyroll-custom-nodes-for-comfyui\nSearge SDXL Nodes\nhttps://civitai.com/models/111463\nSDXL Mile High Styler\nhttps://civitai.com/models/119246\n\nAugust 2023\nAkatsuzi\n"
             ],
             "color": "#432",
             "bgcolor": "#653"
