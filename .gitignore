@@ -5,6 +5,7 @@ ComfyIO/
 
 # VSCode
 .vscode/
+.vscode/launch.json
 
 # macOS files
 .DS_Store
