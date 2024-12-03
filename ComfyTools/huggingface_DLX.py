@@ -140,10 +140,10 @@ def main(api_key):
             elif model_type == "SNAPSHOT":
                 download_snapshot(model_name, model_url, output_dir, revision_sub)
         except Exception as e:
-            print(f"Error setting up download for {model_name}: {e}")
+            print(f"\n🪲\tError setting up download for {model_name}: {e}\t🪲\n")
 
     print(
-        "All models and snapshots downloaded to their respective directories successfully!"
+        "\n\nAll models and snapshots downloaded to their respective directories successfully! 😎"
     )
 
 
