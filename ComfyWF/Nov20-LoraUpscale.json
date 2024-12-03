@@ -1,1 +1,485 @@
-{"last_node_id":91,"last_link_id":128,"nodes":[{"id":6,"type":"CLIPTextEncode","pos":[377,355],"size":[490,250],"flags":{"collapsed":false},"order":7,"mode":0,"inputs":[{"name":"clip","type":"CLIP","link":108,"label":"clip"}],"outputs":[{"name":"CONDITIONING","type":"CONDITIONING","links":[86],"slot_index":0,"label":"CONDITIONING"}],"properties":{"Node name for S&R":"CLIPTextEncode"},"widgets_values":["Imagine stepping onto an alien planet where the landscape is dominated by towering crystalline structures. These magnificent formations rise high into the sky, their surfaces shimmering and glowing in various shades of blue and purple. The light they emit casts an ethereal glow across the terrain, creating a surreal and otherworldly atmosphere.\n\nAbove, the sky is a breathtaking tapestry of multiple moons in different phases, each contributing its own unique hue to the night. Distant stars twinkle like diamonds, adding to the celestial beauty. The moons and stars together create a mesmerizing, ever-changing panorama that captivates anyone who gazes upward.\n\nThe ground beneath your feet is covered in strange, bioluminescent flora. These plants emit a soft, pulsating light in a spectrum of colors, from gentle greens to vibrant pinks and blues. The bioluminescence provides a natural illumination, making the landscape appear as if it's alive with a subtle, rhythmic heartbeat.\n\nAs you explore, you notice that the air is filled with a faint, melodic hum, possibly the result of the crystalline structures resonating with the energy of the planet. The atmosphere is rich with the scent of unknown, exotic flowers, adding another layer to the sensory experience.\n\nThis alien world is a place of wonder and mystery, where every element, from the glowing crystals to the bioluminescent plants, contributes to a sense of unity and interconnectedness. It's a planet that feels both alien and strangely familiar, inviting you to uncover its secrets and marvel at its beauty.\n\nAs for the stars in the sky, imagine a complex celestial dance involving a classic 'three-body problem.' Here, a white dwarf orbits in a delicate balance with two neutron stars, creating a mesmerizing and dynamic stellar trio."],"color":"#232","bgcolor":"#353"},{"id":8,"type":"VAEDecode","pos":[1910,-54],"size":[140,50],"flags":{},"order":15,"mode":0,"inputs":[{"name":"samples","type":"LATENT","link":24,"label":"samples"},{"name":"vae","type":"VAE","link":12,"label":"vae"}],"outputs":[{"name":"IMAGE","type":"IMAGE","links":[126],"slot_index":0,"label":"IMAGE"}],"properties":{"Node name for S&R":"VAEDecode"},"widgets_values":[]},{"id":9,"type":"SaveImage","pos":[2338,263],"size":[840,1280],"flags":{},"order":17,"mode":0,"inputs":[{"name":"images","type":"IMAGE","link":127,"label":"images"}],"outputs":[],"properties":{"Node name for S&R":"SaveImage"},"widgets_values":["FLUX_"]},{"id":10,"type":"VAELoader","pos":[1640,107],"size":[230,60],"flags":{},"order":0,"mode":0,"inputs":[],"outputs":[{"name":"VAE","type":"VAE","links":[12],"slot_index":0,"shape":3,"label":"VAE"}],"properties":{"Node name for S&R":"VAELoader"},"widgets_values":["ae.safetensors"]},{"id":11,"type":"DualCLIPLoader","pos":[14,389],"size":[320,110],"flags":{},"order":1,"mode":0,"inputs":[],"outputs":[{"name":"CLIP","type":"CLIP","links":[108],"slot_index":0,"shape":3,"label":"CLIP"}],"properties":{"Node name for S&R":"DualCLIPLoader"},"widgets_values":["clip_l.safetensors","t5xxl_fp16.safetensors","flux"]},{"id":12,"type":"UNETLoader","pos":[60,190],"size":[320,82],"flags":{},"order":2,"mode":0,"inputs":[],"outputs":[{"name":"MODEL","type":"MODEL","links":[107],"slot_index":0,"shape":3,"label":"MODEL"}],"properties":{"Node name for S&R":"UNETLoader"},"widgets_values":["flux1-dev.safetensors","default"]},{"id":13,"type":"SamplerCustomAdvanced","pos":[1640,300],"size":[240,120],"flags":{},"order":14,"mode":0,"inputs":[{"name":"noise","type":"NOISE","link":37,"slot_index":0,"label":"noise"},{"name":"guider","type":"GUIDER","link":30,"slot_index":1,"label":"guider"},{"name":"sampler","type":"SAMPLER","link":19,"slot_index":2,"label":"sampler"},{"name":"sigmas","type":"SIGMAS","link":20,"slot_index":3,"label":"sigmas"},{"name":"latent_image","type":"LATENT","link":125,"slot_index":4,"label":"latent_image"}],"outputs":[{"name":"output","type":"LATENT","links":[24],"slot_index":0,"shape":3,"label":"output"},{"name":"denoised_output","type":"LATENT","links":null,"shape":3,"label":"denoised_output"}],"properties":{"Node name for S&R":"SamplerCustomAdvanced"},"widgets_values":[]},{"id":16,"type":"KSamplerSelect","pos":[1310,310],"size":[260,60],"flags":{},"order":3,"mode":0,"inputs":[],"outputs":[{"name":"SAMPLER","type":"SAMPLER","links":[19],"shape":3,"label":"SAMPLER"}],"properties":{"Node name for S&R":"KSamplerSelect"},"widgets_values":["euler"]},{"id":17,"type":"BasicScheduler","pos":[1305,420],"size":[260,110],"flags":{},"order":12,"mode":0,"inputs":[{"name":"model","type":"MODEL","link":93,"slot_index":0,"label":"model"}],"outputs":[{"name":"SIGMAS","type":"SIGMAS","links":[20],"shape":3,"label":"SIGMAS"}],"properties":{"Node name for S&R":"BasicScheduler"},"widgets_values":["sgm_uniform",35,1]},{"id":22,"type":"BasicGuider","pos":[1305,200],"size":[260,60],"flags":{"collapsed":false},"order":13,"mode":0,"inputs":[{"name":"model","type":"MODEL","link":94,"slot_index":0,"label":"model"},{"name":"conditioning","type":"CONDITIONING","link":87,"slot_index":1,"label":"conditioning"}],"outputs":[{"name":"GUIDER","type":"GUIDER","links":[30],"slot_index":0,"shape":3,"label":"GUIDER"}],"properties":{"Node name for S&R":"BasicGuider"},"widgets_values":[]},{"id":25,"type":"RandomNoise","pos":[1305,70],"size":[260,82],"flags":{},"order":4,"mode":0,"inputs":[],"outputs":[{"name":"NOISE","type":"NOISE","links":[37],"shape":3,"label":"NOISE"}],"properties":{"Node name for S&R":"RandomNoise"},"widgets_values":[766138643754774,"randomize"]},{"id":60,"type":"FluxGuidance","pos":[994,188],"size":[211.60000610351562,60],"flags":{},"order":10,"mode":0,"inputs":[{"name":"conditioning","type":"CONDITIONING","link":86,"label":"conditioning"}],"outputs":[{"name":"CONDITIONING","type":"CONDITIONING","links":[87],"slot_index":0,"shape":3,"label":"CONDITIONING"}],"properties":{"Node name for S&R":"FluxGuidance"},"widgets_values":[3.5],"color":"#323","bgcolor":"#535"},{"id":61,"type":"ModelSamplingFlux","pos":[909,325],"size":[240,122],"flags":{},"order":11,"mode":0,"inputs":[{"name":"model","type":"MODEL","link":106,"label":"model"},{"name":"width","type":"INT","link":122,"widget":{"name":"width"},"label":"width"},{"name":"height","type":"INT","link":123,"widget":{"name":"height"},"label":"height"}],"outputs":[{"name":"MODEL","type":"MODEL","links":[93,94],"slot_index":0,"shape":3,"label":"MODEL"}],"properties":{"Node name for S&R":"ModelSamplingFlux"},"widgets_values":[1.15,0.5,1024,1024]},{"id":72,"type":"LoraLoaderModelOnly","pos":[430,190],"size":[310,82],"flags":{},"order":8,"mode":0,"inputs":[{"name":"model","type":"MODEL","link":107,"label":"model"}],"outputs":[{"name":"MODEL","type":"MODEL","links":[106],"slot_index":0,"shape":3,"label":"MODEL"}],"properties":{"Node name for S&R":"LoraLoaderModelOnly"},"widgets_values":["realism_lora.safetensors",1]},{"id":85,"type":"CR SDXL Aspect Ratio","pos":[1006,593],"size":[320,280],"flags":{},"order":5,"mode":0,"inputs":[],"outputs":[{"name":"width","type":"INT","links":[122],"slot_index":0,"shape":3,"label":"width"},{"name":"height","type":"INT","links":[123],"slot_index":1,"shape":3,"label":"height"},{"name":"upscale_factor","type":"FLOAT","links":null,"shape":3,"label":"upscale_factor"},{"name":"batch_size","type":"INT","links":null,"shape":3,"label":"batch_size"},{"name":"empty_latent","type":"LATENT","links":[124],"slot_index":4,"shape":3,"label":"empty_latent"},{"name":"show_help","type":"STRING","links":null,"shape":3,"label":"show_help"}],"properties":{"Node name for S&R":"CR SDXL Aspect Ratio"},"widgets_values":[704,1248,"9:16 portrait 768x1344","Off",1,1]},{"id":88,"type":"Reroute","pos":[1446,675],"size":[90.4000015258789,26],"flags":{},"order":9,"mode":0,"inputs":[{"name":"","type":"*","link":124,"label":""}],"outputs":[{"name":"LATENT","type":"LATENT","links":[125],"slot_index":0,"label":""}],"properties":{"showOutputText":true,"horizontal":false}},{"id":90,"type":"ImageUpscaleWithModel","pos":[2045,263],"size":[241.79998779296875,46],"flags":{},"order":16,"mode":0,"inputs":[{"name":"upscale_model","type":"UPSCALE_MODEL","link":128},{"name":"image","type":"IMAGE","link":126}],"outputs":[{"name":"IMAGE","type":"IMAGE","links":[127],"slot_index":0,"shape":3}],"properties":{"Node name for S&R":"ImageUpscaleWithModel"},"widgets_values":[]},{"id":91,"type":"UpscaleModelLoader","pos":[1637,485],"size":[315,58],"flags":{},"order":6,"mode":0,"inputs":[],"outputs":[{"name":"UPSCALE_MODEL","type":"UPSCALE_MODEL","links":[128],"slot_index":0,"shape":3}],"properties":{"Node name for S&R":"UpscaleModelLoader"},"widgets_values":["4x-ClearRealityV1.pth"]}],"links":[[12,10,0,8,1,"VAE"],[19,16,0,13,2,"SAMPLER"],[20,17,0,13,3,"SIGMAS"],[24,13,0,8,0,"LATENT"],[30,22,0,13,1,"GUIDER"],[37,25,0,13,0,"NOISE"],[86,6,0,60,0,"CONDITIONING"],[87,60,0,22,1,"CONDITIONING"],[93,61,0,17,0,"MODEL"],[94,61,0,22,0,"MODEL"],[106,72,0,61,0,"MODEL"],[107,12,0,72,0,"MODEL"],[108,11,0,6,0,"CLIP"],[122,85,0,61,1,"INT"],[123,85,1,61,2,"INT"],[124,85,4,88,0,"*"],[125,88,0,13,4,"LATENT"],[126,8,0,90,1,"IMAGE"],[127,90,0,9,0,"IMAGE"],[128,91,0,90,0,"UPSCALE_MODEL"]],"groups":[],"config":{},"extra":{"ds":{"scale":0.751314800901578,"offset":[136.92195463038198,206.71610428005516]}},"version":0.4}
+{
+    "last_node_id": 91","last_link_id":128",
+    "nodes": [
+        {
+            "id": 6","type":"CLIPTextEncode"",
+            "pos": [
+                377,
+                355
+            ]","size":[490,250]",
+            "flags": {
+                "collapsed": false
+            }","order":7",
+            "mode": 0","inputs":[{{"name":"clip"",
+            "type": "CLIP"","link":108",
+            "label": "clip"
+        }
+    ]","outputs":[{{"name":"CONDITIONING"",
+    "type": "CONDITIONING"","links":[86]",
+    "slot_index": 0","label":"CONDITIONING"}]",
+    "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+    }","widgets_values":["Imagine stepping onto an alien planet where the landscape is dominated by towering crystalline structures. These magnificent formations rise high into the sky, their surfaces shimmering and glowing in various shades of blue and purple. The light they emit casts an ethereal glow across the terrain, creating a surreal and otherworldly atmosphere.\n\nAbove, the sky is a breathtaking tapestry of multiple moons in different phases, each contributing its own unique hue to the night. Distant stars twinkle like diamonds, adding to the celestial beauty. The moons and stars together create a mesmerizing, ever-changing panorama that captivates anyone who gazes upward.\n\nThe ground beneath your feet is covered in strange, bioluminescent flora. These plants emit a soft, pulsating light in a spectrum of colors, from gentle greens to vibrant pinks and blues. The bioluminescence provides a natural illumination, making the landscape appear as if it's alive with a subtle, rhythmic heartbeat.\n\nAs you explore, you notice that the air is filled with a faint, melodic hum, possibly the result of the crystalline structures resonating with the energy of the planet. The atmosphere is rich with the scent of unknown, exotic flowers, adding another layer to the sensory experience.\n\nThis alien world is a place of wonder and mystery, where every element, from the glowing crystals to the bioluminescent plants, contributes to a sense of unity and interconnectedness. It's a planet that feels both alien and strangely familiar, inviting you to uncover its secrets and marvel at its beauty.\n\nAs for the stars in the sky, imagine a complex celestial dance involving a classic 'three-body problem.' Here, a white dwarf orbits in a delicate balance with two neutron stars, creating a mesmerizing and dynamic stellar trio."]",
+    "color": "#232"","bgcolor":"#353"},{"id":8",
+    "type": "VAEDecode"","pos":[1910,-54]",
+    "size": [
+        140,
+        50
+    ]","flags":{}",
+    "order": 15","mode":0",
+    "inputs": [
+        {
+            {
+                "name": "samples"","type":"LATENT"",
+                "link": 24","label":"samples"},{{"name":"vae"",
+                "type": "VAE"","link":12",
+                "label": "vae"
+            }
+        ]","outputs":[{{"name":"IMAGE"",
+        "type": "IMAGE"","links":[126]",
+        "slot_index": 0","label":"IMAGE"}]",
+        "properties": {
+            "Node name for S&R": "VAEDecode"
+        }","widgets_values":[]},{"id":9",
+        "type": "SaveImage"","pos":[2338,263]",
+        "size": [
+            840,
+            1280
+        ]","flags":{}",
+        "order": 17","mode":0",
+        "inputs": [
+            {
+                {
+                    "name": "images"","type":"IMAGE"",
+                    "link": 127","label":"images"}]",
+                    "outputs": []","properties":{"Node name for S&R":"SaveImage"}",
+                    "widgets_values": [
+                        "FLUX_"
+                    ]
+                },
+                {
+                    "id": 10","type":"VAELoader"",
+                    "pos": [
+                        1640,
+                        107
+                    ]","size":[230,60]",
+                    "flags": {}","order":0",
+                    "mode": 0","inputs":[]",
+                    "outputs": [
+                        {
+                            {
+                                "name": "VAE"","type":"VAE"",
+                                "links": [
+                                    12
+                                ]","slot_index":0",
+                                "shape": 3","label":"VAE"}]",
+                                "properties": {
+                                    "Node name for S&R": "VAELoader"
+                                }","widgets_values":["ae.safetensors"]},{"id":11",
+                                "type": "DualCLIPLoader"","pos":[14,389]",
+                                "size": [
+                                    320,
+                                    110
+                                ]","flags":{}",
+                                "order": 1","mode":0",
+                                "inputs": []","outputs":[{{"name":"CLIP"",
+                                "type": "CLIP"","links":[108]",
+                                "slot_index": 0","shape":3",
+                                "label": "CLIP"
+                            }
+                        ]","properties":{"Node name for S&R":"DualCLIPLoader"}",
+                        "widgets_values": [
+                            "clip_l.safetensors"","t5xxl_fp16.safetensors"",
+                            "flux"
+                        ]
+                    },
+                    {
+                        "id": 12","type":"UNETLoader"",
+                        "pos": [
+                            60,
+                            190
+                        ]","size":[320,82]",
+                        "flags": {}","order":2",
+                        "mode": 0","inputs":[]",
+                        "outputs": [
+                            {
+                                {
+                                    "name": "MODEL"","type":"MODEL"",
+                                    "links": [
+                                        107
+                                    ]","slot_index":0",
+                                    "shape": 3","label":"MODEL"}]",
+                                    "properties": {
+                                        "Node name for S&R": "UNETLoader"
+                                    }","widgets_values":["flux1-dev.safetensors"",
+                                    "default"
+                                ]
+                            },
+                            {
+                                "id": 13","type":"SamplerCustomAdvanced"",
+                                "pos": [
+                                    1640,
+                                    300
+                                ]","size":[240,120]",
+                                "flags": {}","order":14",
+                                "mode": 0","inputs":[{{"name":"noise"",
+                                "type": "NOISE"","link":37",
+                                "slot_index": 0","label":"noise"},{{"name":"guider"",
+                                "type": "GUIDER"","link":30",
+                                "slot_index": 1","label":"guider"},{{"name":"sampler"",
+                                "type": "SAMPLER"","link":19",
+                                "slot_index": 2","label":"sampler"},{{"name":"sigmas"",
+                                "type": "SIGMAS"","link":20",
+                                "slot_index": 3","label":"sigmas"},{{"name":"latent_image"",
+                                "type": "LATENT"","link":125",
+                                "slot_index": 4","label":"latent_image"}]",
+                                "outputs": [
+                                    {
+                                        {
+                                            "name": "output"","type":"LATENT"",
+                                            "links": [
+                                                24
+                                            ]","slot_index":0",
+                                            "shape": 3","label":"output"},{{"name":"denoised_output"",
+                                            "type": "LATENT"","links":null",
+                                            "shape": 3","label":"denoised_output"}]",
+                                            "properties": {
+                                                "Node name for S&R": "SamplerCustomAdvanced"
+                                            }","widgets_values":[]},{"id":16",
+                                            "type": "KSamplerSelect"","pos":[1310,310]",
+                                            "size": [
+                                                260,
+                                                60
+                                            ]","flags":{}",
+                                            "order": 3","mode":0",
+                                            "inputs": []","outputs":[{{"name":"SAMPLER"",
+                                            "type": "SAMPLER"","links":[19]",
+                                            "shape": 3","label":"SAMPLER"}]",
+                                            "properties": {
+                                                "Node name for S&R": "KSamplerSelect"
+                                            }","widgets_values":["euler"]},{"id":17",
+                                            "type": "BasicScheduler"","pos":[1305,420]",
+                                            "size": [
+                                                260,
+                                                110
+                                            ]","flags":{}",
+                                            "order": 12","mode":0",
+                                            "inputs": [
+                                                {
+                                                    {
+                                                        "name": "model"","type":"MODEL"",
+                                                        "link": 93","slot_index":0",
+                                                        "label": "model"
+                                                    }
+                                                ]","outputs":[{{"name":"SIGMAS"",
+                                                "type": "SIGMAS"","links":[20]",
+                                                "shape": 3","label":"SIGMAS"}]",
+                                                "properties": {
+                                                    "Node name for S&R": "BasicScheduler"
+                                                }","widgets_values":["sgm_uniform",35,1]},{"id":22",
+                                                "type": "BasicGuider"","pos":[1305,200]",
+                                                "size": [
+                                                    260,
+                                                    60
+                                                ]","flags":{"collapsed":false}",
+                                                "order": 13","mode":0",
+                                                "inputs": [
+                                                    {
+                                                        {
+                                                            "name": "model"","type":"MODEL"",
+                                                            "link": 94","slot_index":0",
+                                                            "label": "model"
+                                                        },
+                                                        {
+                                                            {
+                                                                "name": "conditioning"","type":"CONDITIONING"",
+                                                                "link": 87","slot_index":1",
+                                                                "label": "conditioning"
+                                                            }
+                                                        ]","outputs":[{{"name":"GUIDER"",
+                                                        "type": "GUIDER"","links":[30]",
+                                                        "slot_index": 0","shape":3",
+                                                        "label": "GUIDER"
+                                                    }
+                                                ]","properties":{"Node name for S&R":"BasicGuider"}",
+                                                "widgets_values": []
+                                            },
+                                            {
+                                                "id": 25","type":"RandomNoise"",
+                                                "pos": [
+                                                    1305,
+                                                    70
+                                                ]","size":[260,82]",
+                                                "flags": {}","order":4",
+                                                "mode": 0","inputs":[]",
+                                                "outputs": [
+                                                    {
+                                                        {
+                                                            "name": "NOISE"","type":"NOISE"",
+                                                            "links": [
+                                                                37
+                                                            ]","shape":3",
+                                                            "label": "NOISE"
+                                                        }
+                                                    ]","properties":{"Node name for S&R":"RandomNoise"}",
+                                                    "widgets_values": [
+                                                        766138643754774","randomize"]},{"id":60",
+                                                        "type": "FluxGuidance"","pos":[994,188]",
+                                                        "size": [
+                                                            211.60000610351562,
+                                                            60
+                                                        ]","flags":{}",
+                                                        "order": 10","mode":0",
+                                                        "inputs": [
+                                                            {
+                                                                {
+                                                                    "name": "conditioning"","type":"CONDITIONING"",
+                                                                    "link": 86","label":"conditioning"}]",
+                                                                    "outputs": [
+                                                                        {
+                                                                            {
+                                                                                "name": "CONDITIONING"","type":"CONDITIONING"",
+                                                                                "links": [
+                                                                                    87
+                                                                                ]","slot_index":0",
+                                                                                "shape": 3","label":"CONDITIONING"}]",
+                                                                                "properties": {
+                                                                                    "Node name for S&R": "FluxGuidance"
+                                                                                }","widgets_values":[3.5]",
+                                                                                "color": "#323"","bgcolor":"#535"},{"id":61",
+                                                                                "type": "ModelSamplingFlux"","pos":[909,325]",
+                                                                                "size": [
+                                                                                    240,
+                                                                                    122
+                                                                                ]","flags":{}",
+                                                                                "order": 11","mode":0",
+                                                                                "inputs": [
+                                                                                    {
+                                                                                        {
+                                                                                            "name": "model"","type":"MODEL"",
+                                                                                            "link": 106","label":"model"},{{"name":"width"",
+                                                                                            "type": "INT"","link":122",
+                                                                                            "widget": {
+                                                                                                {
+                                                                                                    "name": "width"
+                                                                                                }","label":"width"},{{"name":"height"",
+                                                                                                "type": "INT"","link":123",
+                                                                                                "widget": {
+                                                                                                    {
+                                                                                                        "name": "height"
+                                                                                                    }","label":"height"}]",
+                                                                                                    "outputs": [
+                                                                                                        {
+                                                                                                            {
+                                                                                                                "name": "MODEL"","type":"MODEL"",
+                                                                                                                "links": [
+                                                                                                                    93,
+                                                                                                                    94
+                                                                                                                ]","slot_index":0",
+                                                                                                                "shape": 3","label":"MODEL"}]",
+                                                                                                                "properties": {
+                                                                                                                    "Node name for S&R": "ModelSamplingFlux"
+                                                                                                                }","widgets_values":[1.15,0.5,1024,1024]},{"id":72",
+                                                                                                                "type": "LoraLoaderModelOnly"","pos":[430,190]",
+                                                                                                                "size": [
+                                                                                                                    310,
+                                                                                                                    82
+                                                                                                                ]","flags":{}",
+                                                                                                                "order": 8","mode":0",
+                                                                                                                "inputs": [
+                                                                                                                    {
+                                                                                                                        {
+                                                                                                                            "name": "model"","type":"MODEL"",
+                                                                                                                            "link": 107","label":"model"}]",
+                                                                                                                            "outputs": [
+                                                                                                                                {
+                                                                                                                                    {
+                                                                                                                                        "name": "MODEL"","type":"MODEL"",
+                                                                                                                                        "links": [
+                                                                                                                                            106
+                                                                                                                                        ]","slot_index":0",
+                                                                                                                                        "shape": 3","label":"MODEL"}]",
+                                                                                                                                        "properties": {
+                                                                                                                                            "Node name for S&R": "LoraLoaderModelOnly"
+                                                                                                                                        }","widgets_values":["realism_lora.safetensors",1]},{"id":85",
+                                                                                                                                        "type": "CR SDXL Aspect Ratio"","pos":[1006,593]",
+                                                                                                                                        "size": [
+                                                                                                                                            320,
+                                                                                                                                            280
+                                                                                                                                        ]","flags":{}",
+                                                                                                                                        "order": 5","mode":0",
+                                                                                                                                        "inputs": []","outputs":[{{"name":"width"",
+                                                                                                                                        "type": "INT"","links":[122]",
+                                                                                                                                        "slot_index": 0","shape":3",
+                                                                                                                                        "label": "width"
+                                                                                                                                    },
+                                                                                                                                    {
+                                                                                                                                        {
+                                                                                                                                            "name": "height"","type":"INT"",
+                                                                                                                                            "links": [
+                                                                                                                                                123
+                                                                                                                                            ]","slot_index":1",
+                                                                                                                                            "shape": 3","label":"height"},{{"name":"upscale_factor"",
+                                                                                                                                            "type": "FLOAT"","links":null",
+                                                                                                                                            "shape": 3","label":"upscale_factor"},{{"name":"batch_size"",
+                                                                                                                                            "type": "INT"","links":null",
+                                                                                                                                            "shape": 3","label":"batch_size"},{{"name":"empty_latent"",
+                                                                                                                                            "type": "LATENT"","links":[124]",
+                                                                                                                                            "slot_index": 4","shape":3",
+                                                                                                                                            "label": "empty_latent"
+                                                                                                                                        },
+                                                                                                                                        {
+                                                                                                                                            {
+                                                                                                                                                "name": "show_help"","type":"STRING"",
+                                                                                                                                                "links": null","shape":3",
+                                                                                                                                                "label": "show_help"
+                                                                                                                                            }
+                                                                                                                                        ]","properties":{"Node name for S&R":"CR SDXL Aspect Ratio"}",
+                                                                                                                                        "widgets_values": [
+                                                                                                                                            704,
+                                                                                                                                            1248","9: 16 portrait 768x1344"",
+                                                                                                                                            "Off",
+                                                                                                                                            1,
+                                                                                                                                            1
+                                                                                                                                        ]
+                                                                                                                                    },
+                                                                                                                                    {
+                                                                                                                                        "id": 88","type":"Reroute"",
+                                                                                                                                        "pos": [
+                                                                                                                                            1446,
+                                                                                                                                            675
+                                                                                                                                        ]","size":[90.4000015258789,26]",
+                                                                                                                                        "flags": {}","order":9",
+                                                                                                                                        "mode": 0","inputs":[{{"name":""",
+                                                                                                                                        "type": "*"","link":124",
+                                                                                                                                        "label": ""
+                                                                                                                                    }
+                                                                                                                                ]","outputs":[{{"name":"LATENT"",
+                                                                                                                                "type": "LATENT"","links":[125]",
+                                                                                                                                "slot_index": 0","label":""}]",
+                                                                                                                                "properties": {
+                                                                                                                                    "showOutputText": true","horizontal":false}},{"id":90",
+                                                                                                                                    "type": "ImageUpscaleWithModel"","pos":[2045,263]",
+                                                                                                                                    "size": [
+                                                                                                                                        241.79998779296875,
+                                                                                                                                        46
+                                                                                                                                    ]","flags":{}",
+                                                                                                                                    "order": 16","mode":0",
+                                                                                                                                    "inputs": [
+                                                                                                                                        {
+                                                                                                                                            {
+                                                                                                                                                "name": "upscale_model"","type":"UPSCALE_MODEL"",
+                                                                                                                                                "link": 128
+                                                                                                                                            },
+                                                                                                                                            {
+                                                                                                                                                {
+                                                                                                                                                    "name": "image"","type":"IMAGE"",
+                                                                                                                                                    "link": 126
+                                                                                                                                                }
+                                                                                                                                            ]","outputs":[{{"name":"IMAGE"",
+                                                                                                                                            "type": "IMAGE"","links":[127]",
+                                                                                                                                            "slot_index": 0","shape":3}]",
+                                                                                                                                            "properties": {
+                                                                                                                                                "Node name for S&R": "ImageUpscaleWithModel"
+                                                                                                                                            }","widgets_values":[]},{"id":91",
+                                                                                                                                            "type": "UpscaleModelLoader"","pos":[1637,485]",
+                                                                                                                                            "size": [
+                                                                                                                                                315,
+                                                                                                                                                58
+                                                                                                                                            ]","flags":{}",
+                                                                                                                                            "order": 6","mode":0",
+                                                                                                                                            "inputs": []","outputs":[{{"name":"UPSCALE_MODEL"",
+                                                                                                                                            "type": "UPSCALE_MODEL"","links":[128]",
+                                                                                                                                            "slot_index": 0","shape":3}]",
+                                                                                                                                            "properties": {
+                                                                                                                                                "Node name for S&R": "UpscaleModelLoader"
+                                                                                                                                            }","widgets_values":["4x-ClearRealityV1.pth"]}]",
+                                                                                                                                            "links": [
+                                                                                                                                                [
+                                                                                                                                                    12,
+                                                                                                                                                    10,
+                                                                                                                                                    0,
+                                                                                                                                                    8,
+                                                                                                                                                    1","VAE"],[19,16,0,13,2",
+                                                                                                                                                    "SAMPLER"
+                                                                                                                                                ],
+                                                                                                                                                [
+                                                                                                                                                    20,
+                                                                                                                                                    17,
+                                                                                                                                                    0,
+                                                                                                                                                    13,
+                                                                                                                                                    3","SIGMAS"],[24,13,0,8,0",
+                                                                                                                                                    "LATENT"
+                                                                                                                                                ],
+                                                                                                                                                [
+                                                                                                                                                    30,
+                                                                                                                                                    22,
+                                                                                                                                                    0,
+                                                                                                                                                    13,
+                                                                                                                                                    1","GUIDER"],[37,25,0,13,0",
+                                                                                                                                                    "NOISE"
+                                                                                                                                                ],
+                                                                                                                                                [
+                                                                                                                                                    86,
+                                                                                                                                                    6,
+                                                                                                                                                    0,
+                                                                                                                                                    60,
+                                                                                                                                                    0","CONDITIONING"],[87,60,0,22,1",
+                                                                                                                                                    "CONDITIONING"
+                                                                                                                                                ],
+                                                                                                                                                [
+                                                                                                                                                    93,
+                                                                                                                                                    61,
+                                                                                                                                                    0,
+                                                                                                                                                    17,
+                                                                                                                                                    0","MODEL"],[94,61,0,22,0",
+                                                                                                                                                    "MODEL"
+                                                                                                                                                ],
+                                                                                                                                                [
+                                                                                                                                                    106,
+                                                                                                                                                    72,
+                                                                                                                                                    0,
+                                                                                                                                                    61,
+                                                                                                                                                    0","MODEL"],[107,12,0,72,0",
+                                                                                                                                                    "MODEL"
+                                                                                                                                                ],
+                                                                                                                                                [
+                                                                                                                                                    108,
+                                                                                                                                                    11,
+                                                                                                                                                    0,
+                                                                                                                                                    6,
+                                                                                                                                                    0","CLIP"],[122,85,0,61,1",
+                                                                                                                                                    "INT"
+                                                                                                                                                ],
+                                                                                                                                                [
+                                                                                                                                                    123,
+                                                                                                                                                    85,
+                                                                                                                                                    1,
+                                                                                                                                                    61,
+                                                                                                                                                    2","INT"],[124,85,4,88,0",
+                                                                                                                                                    "*"
+                                                                                                                                                ],
+                                                                                                                                                [
+                                                                                                                                                    125,
+                                                                                                                                                    88,
+                                                                                                                                                    0,
+                                                                                                                                                    13,
+                                                                                                                                                    4","LATENT"],[126,8,0,90,1",
+                                                                                                                                                    "IMAGE"
+                                                                                                                                                ],
+                                                                                                                                                [
+                                                                                                                                                    127,
+                                                                                                                                                    90,
+                                                                                                                                                    0,
+                                                                                                                                                    9,
+                                                                                                                                                    0","IMAGE"],[128,91,0,90,0",
+                                                                                                                                                    "UPSCALE_MODEL"
+                                                                                                                                                ]
+                                                                                                                                            ]","groups":[]",
+                                                                                                                                            "config": {}","extra":{"ds":{"scale":0.751314800901578",
+                                                                                                                                            "offset": [
+                                                                                                                                                136.92195463038198,
+                                                                                                                                                206.71610428005516
+                                                                                                                                            ]
+                                                                                                                                        }
+                                                                                                                                    }","version":0.4}

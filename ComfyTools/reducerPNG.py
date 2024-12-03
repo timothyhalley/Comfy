@@ -16,7 +16,7 @@ def reduce_png_size(input_path, quality=85, width=None, height=None):
         height (int, optional): The height to resize the image to. Preserves aspect ratio.
     """
     # Define the output path with the quality percentage in the filename
-    output_path = input_path.replace(".png", f"{quality}.png")
+    output_path = input_path.replace(".png", "{quality}.png")
 
     try:
         # Open an image file
@@ -34,7 +34,7 @@ def reduce_png_size(input_path, quality=85, width=None, height=None):
                 [
                     "pngquant",
                     "--quality",
-                    f"{quality}-{quality}",
+                    "{quality}-{quality}",
                     "--output",
                     output_path,
                     "--force",
