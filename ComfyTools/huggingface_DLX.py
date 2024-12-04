@@ -71,8 +71,42 @@ def download_and_verify(
 
 
 # Function to download a snapshot
+# def download_snapshot(model_name, model_url, output_dir, revision_sub):
+#     try:
+#         local_path = snapshot_download(
+#             repo_id=model_url, local_dir=output_dir, revision=revision_sub
+#         )
+
+#         # Move and rename files within the snapshot directory
+#         for root, dirs, files in os.walk(local_path):
+#             for file in files:
+#                 new_filename = os.path.basename(file)  # Extract just the file name
+#                 old_path = os.path.join(root, file)
+#                 new_path = os.path.join(output_dir, new_filename)
+#                 os.rename(old_path, new_path)
+#                 print(f"Snapshot file {new_filename} saved to: {new_path}")
+#     except Exception as e:
+#         print(f"Error downloading snapshot {model_name}: {e}")
+
+
 def download_snapshot(model_name, model_url, output_dir, revision_sub):
     try:
+        # Check if the output directory already contains the snapshot files
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
+
+        # Check if the snapshot files already exist
+        files_exist = any(
+            os.path.isfile(os.path.join(output_dir, f)) for f in os.listdir(output_dir)
+        )
+
+        if files_exist:
+            print(
+                f"Snapshot files for {model_name} already exist in {output_dir}. Skipping download."
+            )
+            return
+
+        # Download the snapshot
         local_path = snapshot_download(
             repo_id=model_url, local_dir=output_dir, revision=revision_sub
         )

@@ -548,6 +548,7 @@
         },
         {
             "name": "FLUX Adapter",
+            "type": "MODEL",
             "url": "openai/clip-vit-large-patch14",
             "dir": "{BASE_PATH}/models/clip",
             "revision": "main",
