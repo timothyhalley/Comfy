@@ -1,44 +1,55 @@
 # ComfyUI
+
 Comfy Scripts and Tools to use
 
-# Sync model directory with SSD:
+# Best Docs so far
+
+<https://comfyui-wiki.com/en>
+
+# Sync model directory with SSD
+
 mkdir -p /Volumes/MySSD/Project/Comfy/ComfyUI/models
 rsync -avP --include='*/' --include='*.safetensors' --include='*.GGUF' --exclude='*' [Source] [Destination]
-rsync -avP --include='*/' --include='*.safetensors' --include='*.GGUF' --exclude='.cache/' --exclude='*' [Source] [Destination]
+rsync -avP --include='*/' --include='*.safetensors' --include='*.GGUF' --include='*.dmg' --include='*.json' --include'*.png' --exclude='.cache/' --exclude='*' [Source] [Destination]
 
-# Delete .cache directories in sub folders:
+# Backup Models with rsync
+
+rsync -avP --include='*/' --include='put_*' --include='*.safetensors' --include='*.gguf' --include='*.ckpt' --include='*.ymal' --include='*.pth' --include='*.pt' --include='*.json' --include='*.ymal' --include='*.dmg' --include='*.json' --include='*.png' --exclude='.cache/' --exclude='*' [Source] [Destination]
+
+# Delete .cache directories in sub folders
+
 find /path/to/directory -type d -name ".cache" -exec rm -rf {} +
-
 
 MBP: /Users/I850916/Projects/Comfy/ComfyUI/models/
 MAC Mini1: ~/Projects/Comfy/ComfyUI/models/
 SSD: /Volumes/MySSD/Project/Comfy/ComfyUI/models/
 
-# Useful links and info:
+# Useful links and info
+
 * Useful links for ComfyUI modeling
 
 # SD Update Oct 22
-https://blog.comfy.org/sd3-5-comfyui/
 
+<https://blog.comfy.org/sd3-5-comfyui/>
 
-# AI Workflow Links:
-https://openaijourney.com/best-comfyui-workflows/
-https://github.com/comfyanonymous/ComfyUI_examples%  
-https://civitai.com/models
-https://comfyanonymous.github.io/ComfyUI_examples/ 
-https://tensor.art/workflows
+# AI Workflow Links
 
+<https://openaijourney.com/best-comfyui-workflows/>
+<https://github.com/comfyanonymous/ComfyUI_examples%>  
+<https://civitai.com/models>
+<https://comfyanonymous.github.io/ComfyUI_examples/>
+<https://tensor.art/workflows>
 
-# Best Img2Img --> 
-https://learn.thinkdiffusion.com/a-list-of-the-best-comfyui-workflows/#img2img-comfyui-workflow
+# Best Img2Img -->
+
+<https://learn.thinkdiffusion.com/a-list-of-the-best-comfyui-workflows/#img2img-comfyui-workflow>
 
 # Best Img2Vid -->
-https://comfyanonymous.github.io/ComfyUI_examples/mochi/
-https://huggingface.co/genmo/mochi-1-preview
 
+<https://comfyanonymous.github.io/ComfyUI_examples/mochi/>
+<https://huggingface.co/genmo/mochi-1-preview>
 
-
-# Prompt for alien:
+# Prompt for alien
 
 Imagine a grand, futuristic lab with sleek metallic walls that glimmer with the soft glow of ambient lighting. In the center of the room stands the quantum computer, a colossal structure that emanates a soft, pulsating light from its core. Its surface is made of a translucent material, allowing you to see the intricate web of quantum particles dancing inside.
 
