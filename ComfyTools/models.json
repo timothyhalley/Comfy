@@ -1,6 +1,33 @@
 {
     "models": [
         {
+            "name": "Drawing Deliberate",
+            "type": "MODEL",
+            "url": "XpucT/Deliberate",
+            "dir": "{BASE_PATH}/models/checkpoints/",
+            "revision": "main",
+            "filename": "Deliberate_v2.safetensors",
+            "checksum": "cc5ffdbb349f9bfb26ae332d00718f3b0e81f06fafb5cba1c39be0d604c60b78"
+        },
+        {
+            "name": "Card Anime",
+            "type": "MODEL",
+            "url": "yz54321/cardosAnime",
+            "dir": "{BASE_PATH}/models/checkpoints/",
+            "revision": "main",
+            "filename": "cardosAnime_v10.safetensors",
+            "checksum": "9aba26abdfcd46073e0a1d42027a3a3bcc969f562d58a03637bf0a0ded6586c9"
+        },
+        {
+            "name": "WD1.5 Illusion",
+            "type": "MODEL",
+            "url": "waifu-diffusion/wd-1-5-beta3",
+            "dir": "{BASE_PATH}/models/checkpoints/",
+            "revision": "main",
+            "filename": "wd-illusion-fp16.safetensors",
+            "checksum": "ea4e0d6b79943cabed61a0491086c5c626d3290bde815b5afb43d0e4e3a0caa8"
+        },
+        {
             "name": "Zovya RPG",
             "type": "MODEL",
             "url": "lemon2431/aZovyaRPGArtistTools_v3",
@@ -31,7 +58,7 @@
             "name": "Mochi FP16",
             "type": "MODEL",
             "url": "Comfy-Org/mochi_preview_repackaged",
-            "dir": "{BASE_PATH}/models/text_encoders/",
+            "dir": "{BASE_PATH}/models/clip/",
             "revision": "main",
             "filename": "split_files/text_encoders/t5xxl_fp16.safetensors",
             "checksum": "6e480b09fae049a72d2a8c5fbccb8d3e92febeb233bbe9dfe7256958a9167635"
@@ -229,7 +256,7 @@
             "name": "SD3.5D TextEncoder - G",
             "type": "MODEL",
             "url": "stabilityai/stable-diffusion-3-medium",
-            "dir": "{BASE_PATH}/models/text_encoders/",
+            "dir": "{BASE_PATH}/models/clip/",
             "revision": "main",
             "filename": "text_encoders/clip_g.safetensors",
             "checksum": "ec310df2af79c318e24d20511b601a591ca8cd4f1fce1d8dff822a356bcdb1f4"
@@ -238,7 +265,7 @@
             "name": "SD3.5D TextEncoder - L",
             "type": "MODEL",
             "url": "stabilityai/stable-diffusion-3-medium",
-            "dir": "{BASE_PATH}/models/text_encoders/",
+            "dir": "{BASE_PATH}/models/clip/",
             "revision": "main",
             "filename": "text_encoders/clip_l.safetensors",
             "checksum": "660c6f5b1abae9dc498ac2d21e1347d2abdb0cf6c0c0c8576cd796491d9a6cdd"
@@ -256,7 +283,7 @@
             "name": "FLUX 1 DEV",
             "type": "MODEL",
             "url": "black-forest-labs/FLUX.1-dev",
-            "dir": "{BASE_PATH}/models/checkpoints/",
+            "dir": "{BASE_PATH}/models/unet",
             "revision": "main",
             "filename": "flux1-dev.safetensors",
             "checksum": "4610115bb0c89560703c892c59ac2742fa821e60ef5871b33493ba544683abd7"
@@ -373,19 +400,10 @@
             "name": "SDXL Offset 1.0",
             "type": "MODEL",
             "url": "stabilityai/stable-diffusion-xl-base-1.0",
-            "dir": "{BASE_PATH}/models/loras",
+            "dir": "{BASE_PATH}/models/loras/SDXL",
             "revision": "main",
             "filename": "sd_xl_offset_example-lora_1.0.safetensors",
             "checksum": "4852686128f953d0277d0793e2f0335352f96a919c9c16a09787d77f55cbdf6f"
-        },
-        {
-            "name": "LCM SDXL",
-            "type": "MODEL",
-            "url": "latent-consistency/lcm-lora-sdxl",
-            "dir": "{BASE_PATH}/models/loras",
-            "revision": "main",
-            "filename": "pytorch_lora_weights.safetensors",
-            "checksum": "a764e6859b6e04047cd761c08ff0cee96413a8e004c9f07707530cd776b19141"
         },
         {
             "name": "FluxRealismLora",
@@ -548,6 +566,15 @@
             "filename": "flux1-schnell-Q6_K.gguf",
             "revision": "main",
             "checksum": "a42fd143cec4d7194da281dc8d23a8fe54b16875a13423c042cb545d1da6fa50"
+        },
+        {
+            "name": "FLUX1 Schnell",
+            "type": "MODEL",
+            "url": "black-forest-labs/FLUX.1-schnell",
+            "dir": "{BASE_PATH}/models/unet",
+            "filename": "flux1-schnell.safetensors",
+            "revision": "main",
+            "checksum": "9403429e0052277ac2a87ad800adece5481eecefd9ed334e1f348723621d2a0a"
         },
         {
             "name": "FLUX IP",

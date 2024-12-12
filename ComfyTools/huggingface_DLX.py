@@ -1,3 +1,7 @@
+"""
+This module is for downloading data from Hugging Face.
+"""
+
 import argparse
 import hashlib
 import json
@@ -9,16 +13,20 @@ from huggingface_hub import hf_hub_download, login, snapshot_download
 BASE_PATH = "/Volumes/MySSD/ComfyUI"
 
 
-# Function to replace {BASE_PATH} placeholders
 def replace_base_path(data, base_path):
+    """
+    # Function to replace {BASE_PATH} placeholders
+    """
     for model_info in data["models"]:
         if "{BASE_PATH}" in model_info["dir"]:
             model_info["dir"] = model_info["dir"].replace("{BASE_PATH}", base_path)
     return data
 
 
-# Function to calculate the checksum of a file
 def calculate_checksum(file_path, hash_algo="sha256"):
+    """
+    # Function to calculate the checksum of a file
+    """
     try:
         hash_func = hashlib.new(hash_algo)
         with open(file_path, "rb") as f:
@@ -30,10 +38,20 @@ def calculate_checksum(file_path, hash_algo="sha256"):
         return None
 
 
-# Function to download and verify file
 def download_and_verify(
     model_name, model_url, output_dir, revision_sub, filename, expected_checksum
 ):
+    """_summary_
+
+    Args:
+        model_name (_type_): _description_
+        model_url (_type_): _description_
+        output_dir (_type_): _description_
+        revision_sub (_type_): _description_
+        filename (_type_): _description_
+        expected_checksum (_type_): _description_
+    """
+
     try:
         # Extract just the file name from the provided filename path
         new_filename = os.path.basename(filename)
@@ -56,6 +74,9 @@ def download_and_verify(
             )
 
         # Download the file
+        # print(
+        #     f"\n\t👊Skipping download to debug JSON\n\t\t{model_name}\t{revision_sub}\t{model_url}:{new_filename}\t🐉\n"
+        # )
         hf_hub_download(
             repo_id=model_url,
             revision=revision_sub,
@@ -90,6 +111,14 @@ def download_and_verify(
 
 
 def download_snapshot(model_name, model_url, output_dir, revision_sub):
+    """_summary_
+
+    Args:
+        model_name (_type_): _description_
+        model_url (_type_): _description_
+        output_dir (_type_): _description_
+        revision_sub (_type_): _description_
+    """
     try:
         # Check if the output directory already contains the snapshot files
         if not os.path.exists(output_dir):
@@ -124,6 +153,12 @@ def download_snapshot(model_name, model_url, output_dir, revision_sub):
 
 
 def main(api_key):
+    """
+    _summary_
+
+    Args:
+        api_key (_type_): _description_
+    """
     # Change the working directory to the same directory as the script
     script_dir = os.path.dirname(os.path.abspath(__file__))
     os.chdir(script_dir)
@@ -141,7 +176,7 @@ def main(api_key):
     # Load the models information from models.json
     json_file_path = "models.json"
     print(f"Looking for JSON file at: {json_file_path}")
-    with open(json_file_path, "r") as f:
+    with open(json_file_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
     # Replace {BASE_PATH} with the actual BASE_PATH value
