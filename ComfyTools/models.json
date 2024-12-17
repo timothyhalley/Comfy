@@ -112,7 +112,7 @@
             "name": "ComfyOrg Flux1 FP8",
             "type": "MODEL",
             "url": "Comfy-Org/flux1-dev",
-            "dir": "{BASE_PATH}/models/controlnet/",
+            "dir": "{BASE_PATH}/models/checkpoints/FLUX1/",
             "revision": "main",
             "filename": "flux1-dev-fp8.safetensors",
             "checksum": "8e91b68084b53a7fc44ed2a3756d821e355ac1a7b6fe29be760c1db532f3d88a"
@@ -283,7 +283,7 @@
             "name": "FLUX 1 DEV",
             "type": "MODEL",
             "url": "black-forest-labs/FLUX.1-dev",
-            "dir": "{BASE_PATH}/models/unet",
+            "dir": "{BASE_PATH}/models/diffusion_models/FLUX1",
             "revision": "main",
             "filename": "flux1-dev.safetensors",
             "checksum": "4610115bb0c89560703c892c59ac2742fa821e60ef5871b33493ba544683abd7"
@@ -571,7 +571,7 @@
             "name": "FLUX1 Schnell",
             "type": "MODEL",
             "url": "black-forest-labs/FLUX.1-schnell",
-            "dir": "{BASE_PATH}/models/unet",
+            "dir": "{BASE_PATH}/models/diffusion_models/FLUX1",
             "filename": "flux1-schnell.safetensors",
             "revision": "main",
             "checksum": "9403429e0052277ac2a87ad800adece5481eecefd9ed334e1f348723621d2a0a"
