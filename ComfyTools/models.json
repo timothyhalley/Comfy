@@ -1,13 +1,76 @@
 {
     "models": [
         {
+            "name": "CN PreTrained",
+            "type": "MODEL",
+            "url": "JCTN/ControlNet-Pre-Trained",
+            "dir": "{BASE_PATH}/models/controlnet/",
+            "revision": "main",
+            "filename": "ControlNet Pre-Trained Difference Models/controlnetPreTrained_depthDifferenceV10.safetensors",
+            "checksum": "8b00f19f3f400e3791081ba35c1c615e975d88f5338e7f1bbe09e06465dabc00"
+        },
+        {
+            "name": "Real Esrgan US",
+            "type": "MODEL",
+            "url": "nateraw/real-esrgan",
+            "dir": "{BASE_PATH}/models/upscale_models",
+            "revision": "main",
+            "filename": "RealESRGAN_x2plus.pth",
+            "checksum": "49fafd45f8fd7aa8d31ab2a22d14d91b536c34494a5cfe31eb5d89c2fa266abb"
+        },
+        {
+            "name": "Epicrealism XL",
+            "type": "MODEL",
+            "url": "John6666/epicrealism-xl-v8kiss-sdxl",
+            "dir": "{BASE_PATH}/models/checkpoints",
+            "revision": "main",
+            "filename": "epicrealismXL_vx1Finalkiss.safetensors",
+            "checksum": "c3f7f7f57bf5a9385fce99fd8600a2b68da3f04540d5608b125cae90ae8e21ee"
+        },
+        {
+            "name": "SD-X4 UpScale",
+            "type": "MODEL",
+            "url": "stabilityai/stable-diffusion-xl-refiner-1.0",
+            "dir": "{BASE_PATH}/models/checkpoints",
+            "revision": "main",
+            "filename": "sd_xl_refiner_1.0.safetensors",
+            "checksum": "7440042bbdc8a24813002c09b6b69b64dc90fded4472613437b7f55f9b7d9c5f"
+        },
+        {
+            "name": "SD-X4 UpScale",
+            "type": "MODEL",
+            "url": "stabilityai/stable-diffusion-x4-upscaler",
+            "dir": "{BASE_PATH}/models/upscale_models",
+            "revision": "main",
+            "filename": "x4-upscaler-ema.safetensors",
+            "checksum": "35c01d6160bdfe6644b0aee52ac2667da2f40a33a5d1ef12bbd011d059057bc6"
+        },
+        {
+            "name": "Art Clarity",
+            "type": "MODEL",
+            "url": "libsgo/1x_ArtClarity.pth",
+            "dir": "{BASE_PATH}/models/upscale_models",
+            "revision": "main",
+            "filename": "1x_ArtClarity.pth",
+            "checksum": "0eb0513fb93ca401b516315f88a983e757ed6beeba2c7c825dcd1e37f1c154e8"
+        },
+        {
+            "name": "SD Img2Vid",
+            "type": "MODEL",
+            "url": "stabilityai/stable-video-diffusion-img2vid-xt",
+            "dir": "{BASE_PATH}/models/checkpoints/",
+            "revision": "main",
+            "filename": "svd_xt.safetensors",
+            "checksum": "b2652c23d64a1da5f14d55011b9b6dce55f2e72e395719f1cd1f8a079b00a451"
+        },
+        {
             "name": "Drawing Deliberate",
             "type": "MODEL",
             "url": "XpucT/Deliberate",
             "dir": "{BASE_PATH}/models/checkpoints/",
             "revision": "main",
-            "filename": "Deliberate_v2.safetensors",
-            "checksum": "cc5ffdbb349f9bfb26ae332d00718f3b0e81f06fafb5cba1c39be0d604c60b78"
+            "filename": "Deliberate_v6.safetensors",
+            "checksum": "bcce73a08e95a4d4a3332875342792a50ab9bf9f07fdedcab49fd425fac173be"
         },
         {
             "name": "Card Anime",
@@ -16,7 +79,7 @@
             "dir": "{BASE_PATH}/models/checkpoints/",
             "revision": "main",
             "filename": "cardosAnime_v10.safetensors",
-            "checksum": "9aba26abdfcd46073e0a1d42027a3a3bcc969f562d58a03637bf0a0ded6586c9"
+            "checksum": "cc5ffdbb349f9bfb26ae332d00718f3b0e81f06fafb5cba1c39be0d604c60b78"
         },
         {
             "name": "WD1.5 Illusion",
@@ -364,7 +427,7 @@
             "name": "FLUX Schnell",
             "type": "MODEL",
             "url": "black-forest-labs/FLUX.1-schnell",
-            "dir": "{BASE_PATH}/models/vae",
+            "dir": "{BASE_PATH}/models/vae/FLUX1",
             "revision": "main",
             "filename": "ae.safetensors",
             "checksum": "afc8e28272cd15db3919bacdb6918ce9c1ed22e96cb12c4d5ed0fba823529e38"
@@ -562,7 +625,7 @@
             "name": "GGUF Unet Q6_K",
             "type": "MODEL",
             "url": "city96/FLUX.1-schnell-gguf",
-            "dir": "{BASE_PATH}/models/diffusion_models",
+            "dir": "{BASE_PATH}/models/diffusion_models/FLUX1",
             "filename": "flux1-schnell-Q6_K.gguf",
             "revision": "main",
             "checksum": "a42fd143cec4d7194da281dc8d23a8fe54b16875a13423c042cb545d1da6fa50"
