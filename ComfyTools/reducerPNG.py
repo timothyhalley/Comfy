@@ -5,18 +5,21 @@ import sys
 from PIL import Image
 
 
-def reduce_png_size(input_path, quality=85, width=None, height=None):
+def reduce_png_size(
+    input_path, quality_min=60, quality_max=85, width=None, height=None
+):
     """
     Reduce the size of a PNG image by resizing and compressing it using pngquant.
 
     Args:
         input_path (str): The path to the input PNG image.
-        quality (int): The quality level for the saved image (default is 85).
+        quality_min (int): The minimum quality level for the saved image.
+        quality_max (int): The maximum quality level for the saved image.
         width (int, optional): The width to resize the image to. Preserves aspect ratio.
         height (int, optional): The height to resize the image to. Preserves aspect ratio.
     """
     # Define the output path with the quality percentage in the filename
-    output_path = input_path.replace(".png", "{quality}.png")
+    output_path = input_path.replace(".png", f"_{quality_max}.png")
 
     try:
         # Open an image file
@@ -34,7 +37,7 @@ def reduce_png_size(input_path, quality=85, width=None, height=None):
                 [
                     "pngquant",
                     "--quality",
-                    "{quality}-{quality}",
+                    f"{quality_min}-{quality_max}",
                     "--output",
                     output_path,
                     "--force",
@@ -59,4 +62,4 @@ if __name__ == "__main__":
         sys.exit(1)
 
     input_image_path = sys.argv[1]
-    reduce_png_size(input_image_path, quality=85, width=1024)
+    reduce_png_size(input_image_path, quality_min=60, quality_max=85, width=1024)
