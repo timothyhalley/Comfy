@@ -1,6 +1,33 @@
 {
     "models": [
         {
+            "name": "NMKD-X4 UpScale",
+            "type": "MODEL",
+            "url": "gemasai/4x_NMKD-Superscale-SP_178000_G",
+            "dir": "{BASE_PATH}/models/upscale_models",
+            "revision": "main",
+            "filename": "4x_NMKD-Superscale-SP_178000_G.pth",
+            "checksum": "1d1b0078fe71446e0469d8d4df59e96baa80d83cda600d68237d655830821bcc"
+        },
+        {
+            "name": "FLUX 1 DEV F16",
+            "type": "MODEL",
+            "url": "city96/FLUX.1-dev-gguf",
+            "dir": "{BASE_PATH}/models/diffusion_models/FLUX1",
+            "revision": "main",
+            "filename": "flux1-dev-F16.gguf",
+            "checksum": "c0a28d5ed1d9b57d06778ebb4b16f0f12c5607ee02498411ba2cccd270cbb70a"
+        },
+        {
+            "name": "Style Model",
+            "type": "MODEL",
+            "url": "black-forest-labs/FLUX.1-Redux-dev",
+            "dir": "{BASE_PATH}/models/style_models/",
+            "revision": "main",
+            "filename": "flux1-redux-dev.safetensors",
+            "checksum": "a1b3bdcb4bdc58ce04874b9ca776d61fc3e914bb6beab41efb63e4e2694dca45"
+        },
+        {
             "name": "CN PreTrained",
             "type": "MODEL",
             "url": "JCTN/ControlNet-Pre-Trained",
@@ -656,6 +683,15 @@
             "revision": "main",
             "filename": "model.safetensors",
             "checksum": "a2bf730a0c7debf160f7a6b50b3aaf3703e7e88ac73de7a314903141db026dcb"
+        },
+        {
+            "name": "SigClip Vision",
+            "type": "MODEL",
+            "url": "Comfy-Org/sigclip_vision_384",
+            "dir": "{BASE_PATH}/models/clip_vision",
+            "revision": "main",
+            "filename": "sigclip_vision_patch14_384.safetensors",
+            "checksum": "1fee501deabac72f0ed17610307d7131e3e9d1e838d0363aa3c2b97a6e03fb33"
         },
         {
             "name": "Clip Vision H",

@@ -10,6 +10,13 @@ Comfy Scripts references and Tools to use
 
 <https://comfyui-wiki.com/en>
 
+## ComfyUI Workflows
+
+<https://comfyworkflows.com>
+<https://github.com/cubiq/ComfyUI_Workflows>
+<https://comfyui-wiki.com/en/interface/workflow>
+<https://openart.ai/workflows/home>
+
 ## Directory with SSD
 
 mkdir -p /Volumes/MySSD/ComfyUI/models

@@ -8,18 +8,20 @@ comfyui_desktop:
   configs: /Volumes/MySSD/ComfyUI/models/configs/
   controlnet: /Volumes/MySSD/ComfyUI/models/controlnet/
   diffusers: /Volumes/MySSD/ComfyUI/models/diffusers/
-  diffusion_models: /Volumes/MySSD/ComfyUI/models/diffusion_/Volumes/MySSD/ComfyUI/models/
+  diffusion_models: /Volumes/MySSD/ComfyUI/models/diffusion_models/
   embeddings: /Volumes/MySSD/ComfyUI/models/embeddings/
   gligen: /Volumes/MySSD/ComfyUI/models/gligen/
   hypernetworks: /Volumes/MySSD/ComfyUI/models/hypernetworks/
+  hypersd: /Volumes/MySSD/ComfyUI/models/HyperSD/
   loras: /Volumes/MySSD/ComfyUI/models/loras/
   photomaker: /Volumes/MySSD/ComfyUI/models/photomaker/
-  style_models: /Volumes/MySSD/ComfyUI/models/style_/Volumes/MySSD/ComfyUI/models/
+  style_models: /Volumes/MySSD/ComfyUI/models/style_models/
   unet: /Volumes/MySSD/ComfyUI/models/unet/
-  upscale_models: /Volumes/MySSD/ComfyUI/models/upscale_/Volumes/MySSD/ComfyUI/models/
+  upscale_models: /Volumes/MySSD/ComfyUI/models/upscale_models/
   vae: /Volumes/MySSD/ComfyUI/models/vae/
   vae_approx: /Volumes/MySSD/ComfyUI/models/vae_approx/
-  animatediff_models: /Volumes/MySSD/ComfyUI/models/animatediff_/Volumes/MySSD/ComfyUI/models/
+  animatediff: /Volumes/MySSD/ComfyUI/models/AnimateDiff/
+  animatediff_models: /Volumes/MySSD/ComfyUI/models/animatediff_models/
   animatediff_motion_lora: /Volumes/MySSD/ComfyUI/models/animatediff_motion_lora/
   animatediff_video_formats: /Volumes/MySSD/ComfyUI/models/animatediff_video_formats/
   ipadapter: /Volumes/MySSD/ComfyUI/models/ipadapter/
@@ -33,6 +35,7 @@ comfyui_desktop:
   CogVideo: /Volumes/MySSD/ComfyUI/models/CogVideo/
   xlabs: /Volumes/MySSD/ComfyUI/models/xlabs/
   instantid: /Volumes/MySSD/ComfyUI/models/instantid/
+  ultralytics: /Volumes/MySSD/ComfyUI/models/ultralytics/
   custom_nodes: custom_nodes/
   download_model_base: models
-  base_path: /Users/I850916/Projects/Comfy/ComfyUI
+  base_path: /Users/timothyhalley/Projects/Comfy/ComfyUI
