@@ -1,6 +1,114 @@
 {
     "models": [
         {
+            "name": "City96 Encoder",
+            "type": "MODEL",
+            "url": "city96/t5-v1_1-xxl-encoder-gguf",
+            "dir": "{BASE_PATH}/models/text_encoders/",
+            "revision": "main",
+            "filename": "t5-v1_1-xxl-encoder-f16.gguf",
+            "checksum": "1dc600961d3c5ed081f6700485cdc7ed9cfb4631f2dc385b7ac6bd3c80846d0d"
+        },
+        {
+            "name": "PixArt Sigma",
+            "type": "MODEL",
+            "url": "PixArt-alpha/PixArt-Sigma",
+            "dir": "{BASE_PATH}/models/checkpoints/",
+            "revision": "main",
+            "filename": "PixArt-Sigma-XL-2-1024-MS.pth",
+            "checksum": "e63941ddc11c9e0bba27e9a0e454d5d959361119849ecfc8981f0488f0d96ff3"
+        },
+        {
+            "name": "SANA 1.0 Diffusers",
+            "type": "MODEL",
+            "url": "mit-han-lab/dc-ae-f32c32-sana-1.0-diffusers",
+            "dir": "{BASE_PATH}/models/vae/SANA/",
+            "revision": "main",
+            "filename": "diffusion_pytorch_model.safetensors",
+            "checksum": "15a4b09e56d95b768a0ec9da50b702e21d920333fc9b3480d66bb5c7fad9d87f"
+        },
+        {
+            "name": "SANA 1600M 1024px",
+            "type": "MODEL",
+            "url": "Efficient-Large-Model/Sana_1600M_1024px",
+            "dir": "{BASE_PATH}/models/checkpoints/",
+            "revision": "main",
+            "filename": "checkpoints/Sana_1600M_1024px.pth",
+            "checksum": "bce11f0fdaa849bf442e33b451503244907dd7dba72a3e6b37c14da78aba32de"
+        },
+        {
+            "name": "T5XXL FP8 CLIP",
+            "type": "MODEL",
+            "url": "comfyanonymous/flux_text_encoders",
+            "dir": "{BASE_PATH}/models/clip/",
+            "revision": "main",
+            "filename": "t5xxl_fp8_e4m3fn_scaled.safetensors",
+            "checksum": "a498f0485dc9536735258018417c3fd7758dc3bccc0a645feaa472b34955557a"
+        },
+        {
+            "name": "FLUX1 Schnell FP8",
+            "type": "MODEL",
+            "url": "Comfy-Org/flux1-schnell",
+            "dir": "{BASE_PATH}/models/diffusion_models",
+            "revision": "main",
+            "filename": "flux1-schnell-fp8.safetensors",
+            "checksum": "ead426278b49030e9da5df862994f25ce94ab2ee4df38b556ddddb3db093bf72"
+        },
+        {
+            "name": "ESRGAN-X4 UpScaler",
+            "type": "MODEL",
+            "url": "uwg/upscaler",
+            "dir": "{BASE_PATH}/models/upscale_models",
+            "revision": "main",
+            "filename": "ESRGAN/4x_Valar_v1.pth",
+            "checksum": "90c3192bef43e4baaa095c04751868065f23c52d98c1b42e6d0916bfeda75646"
+        },
+        {
+            "name": "SDXL VAE Lora",
+            "type": "MODEL",
+            "url": "stabilityai/stable-diffusion-xl-base-1.0",
+            "dir": "{BASE_PATH}/models/loras",
+            "revision": "main",
+            "filename": "sd_xl_offset_example-lora_1.0.safetensors",
+            "checksum": "4852686128f953d0277d0793e2f0335352f96a919c9c16a09787d77f55cbdf6f"
+        },
+        {
+            "name": "Unclip Loader SD",
+            "type": "MODEL",
+            "url": "stabilityai/stable-diffusion-2-1-unclip",
+            "dir": "{BASE_PATH}/models/checkpoints/",
+            "revision": "main",
+            "filename": "sd21-unclip-h.ckpt",
+            "checksum": "4124cbcf397ace8c536908f5f877a1f091a41168d1d3d9fd0c84484c1653693b"
+        },
+        {
+            "name": "FLUX Alpha 8B",
+            "type": "MODEL",
+            "url": "city96/flux.1-lite-8B-alpha-gguf",
+            "dir": "{BASE_PATH}/models/diffusion_models/FLUX1",
+            "revision": "main",
+            "filename": "flux.1-lite-8B-alpha-Q8_0.gguf",
+            "checksum": "efc598d62123f2fdfd682948f533fee081f7fb1295b14d002ac1e66cae5f01a5"
+        },
+        {
+            "name": "Flux1 Canny DEV",
+            "type": "MODEL",
+            "url": "second-state/FLUX.1-Canny-dev-GGUF",
+            "dir": "{BASE_PATH}/models/diffusion_models",
+            "revision": "main",
+            "filename": "flux1-canny-dev.safetensors",
+            "checksum": "996876670169591cb412b937fbd46ea14cbed6933aef17c48a2dcd9685c98cdb"
+        },
+        {
+            "name": "Cyber Realistic CP",
+            "type": "MODEL",
+            "url": "cyberdelia/CyberRealisticPony",
+            "dir": "{BASE_PATH}/models/checkpoints",
+            "revision": "main",
+            "filename": "CyberRealisticPony_V63.safetensors",
+            "checksum": "653cf3eaddd411264b4b874148bdd3c21e88d13e52494a1581725b534b4cb70f"
+        },
+        {
             "name": "NMKD-X4 UpScale",
             "type": "MODEL",
             "url": "gemasai/4x_NMKD-Superscale-SP_178000_G",

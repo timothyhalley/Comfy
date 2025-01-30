@@ -10,6 +10,10 @@ Comfy Scripts references and Tools to use
 
 <https://comfyui-wiki.com/en>
 
+## Custom Node Build
+
+<https://docs.comfy.org/custom-nodes/custom_node_walkthrough>
+
 ## ComfyUI Workflows
 
 <https://comfyworkflows.com>
