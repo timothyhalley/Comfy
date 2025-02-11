@@ -1,6 +1,16 @@
 {
     "models": [
         {
+            "name": "Mochi Model Preview",
+            "type": "MODEL",
+            "url": "Comfy-Org/mochi_preview_repackaged",
+            "dir": "{BASE_PATH}/models/diffusion_models/Mochi",
+            "revision": "main",
+            "filename": "split_files/diffusion_models/mochi_preview_bf16.safetensors",
+            "newname": "mochi_preview_bf16.safetensors",
+            "checksum": "e445b9b393c70c431543b062cc16ee29b5dc4dc187487fa3e1f5a4b6162c8be1"
+        },
+        {
             "name": "Clip Vision S32B",
             "type": "MODEL",
             "url": "laion/CLIP-ViT-H-14-laion2B-s32B-b79K",
@@ -44,7 +54,7 @@
             "dir": "{BASE_PATH}/models/diffusion_models/Hunyuan",
             "filename": "split_files/diffusion_models/hunyuan_video_t2v_720p_bf16.safetensors",
             "revision": "main",
-            "newname": "Hunyuan/hunyuan_video_t2v_720p_bf16.safetensors",
+            "newname": "hunyuan_video_t2v_720p_bf16.safetensors",
             "checksum": "c6ff2d107f0fec571fe276ad847468404ed01855c28c0be8859c3b311daec52a"
         },
         {
@@ -108,6 +118,7 @@
             "dir": "{BASE_PATH}/models/checkpoints/",
             "revision": "main",
             "filename": "checkpoints/Sana_1600M_1024px.pth",
+            "newname": "Sana_1600M_1024px.pth",
             "checksum": "bce11f0fdaa849bf442e33b451503244907dd7dba72a3e6b37c14da78aba32de"
         },
         {
@@ -135,6 +146,7 @@
             "dir": "{BASE_PATH}/models/upscale_models",
             "revision": "main",
             "filename": "ESRGAN/4x_Valar_v1.pth",
+            "newname": "ESRGAN_X4_UpScaler.pth",
             "checksum": "90c3192bef43e4baaa095c04751868065f23c52d98c1b42e6d0916bfeda75646"
         },
         {
@@ -216,6 +228,7 @@
             "dir": "{BASE_PATH}/models/controlnet/",
             "revision": "main",
             "filename": "ControlNet Pre-Trained Difference Models/controlnetPreTrained_depthDifferenceV10.safetensors",
+            "newname": "controlnetPreTrained_depthDifferenceV10.safetensors",
             "checksum": "8b00f19f3f400e3791081ba35c1c615e975d88f5338e7f1bbe09e06465dabc00"
         },
         {
@@ -333,6 +346,7 @@
             "dir": "{BASE_PATH}/models/clip/",
             "revision": "main",
             "filename": "split_files/text_encoders/t5xxl_fp16.safetensors",
+            "newname": "t5xxl_fp16.safetensors",
             "checksum": "6e480b09fae049a72d2a8c5fbccb8d3e92febeb233bbe9dfe7256958a9167635"
         },
         {
@@ -609,9 +623,9 @@
             "name": "SD15 Monster",
             "type": "MODEL",
             "url": "monster-labs/control_v1p_sd15_qrcode_monster",
-            "dir": "{BASE_PATH}/models/controlnet",
+            "dir": "{BASE_PATH}/models/controlnet/v2",
             "revision": "main",
-            "filename": "v2/control_v1p_sd15_qrcode_monster_v2.safetensors",
+            "filename": "control_v1p_sd15_qrcode_monster_v2.safetensors",
             "checksum": "fc985da5850a03033c9e28032532f406ae04bd127178ae5bc6d3ec0502b25253"
         },
         {
@@ -627,9 +641,10 @@
             "name": "Mochi",
             "type": "MODEL",
             "url": "Comfy-Org/mochi_preview_repackaged",
-            "dir": "{BASE_PATH}/models/vae/",
+            "dir": "{BASE_PATH}/models/vae/Mochi",
             "revision": "main",
             "filename": "split_files/vae/mochi_vae.safetensors",
+            "newname": "mochi_vae.safetensors",
             "checksum": "1be451cec94b911980406169286babc5269e7cf6a94bbbbdf45e8d3f2c961083"
         },
         {
@@ -820,15 +835,6 @@
             "revision": "main",
             "filename": "DD-made-of-clay-XL-v2.safetensors",
             "checksum": "cdc4c3e276b857b21b9c6308f426baa446027bb734b5bbdeecaa2a06d9a4f41a"
-        },
-        {
-            "name": "Mochi Model",
-            "type": "MODEL",
-            "url": "Comfy-Org/mochi_preview_repackaged",
-            "dir": "{BASE_PATH}/models/diffusion_models",
-            "revision": "main",
-            "filename": "split_files/diffusion_models/mochi_preview_bf16.safetensors",
-            "checksum": "e445b9b393c70c431543b062cc16ee29b5dc4dc187487fa3e1f5a4b6162c8be1"
         },
         {
             "name": "GGUF Unet Q6_K",

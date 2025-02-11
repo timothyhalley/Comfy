@@ -13,16 +13,6 @@ BASE_PATH = "/Volumes/MySSD/ComfyUI"
 
 
 def replace_base_path(data, base_path):
-    """
-    Replaces the {BASE_PATH} placeholder in the model directory paths with the actual base path.
-
-    Args:
-        data (dict): Dictionary containing model information.
-        base_path (str): The base path to replace the placeholder with.
-
-    Returns:
-        dict: Updated dictionary with the base path replaced.
-    """
     for model_info in data["models"]:
         if "{BASE_PATH}" in model_info["dir"]:
             model_info["dir"] = model_info["dir"].replace("{BASE_PATH}", base_path)
@@ -30,16 +20,6 @@ def replace_base_path(data, base_path):
 
 
 def calculate_checksum(file_path, hash_algo="sha256"):
-    """
-    Calculates the checksum of a file.
-
-    Args:
-        file_path (str): Path to the file.
-        hash_algo (str): Hashing algorithm to use (default is sha256).
-
-    Returns:
-        str: Calculated checksum of the file.
-    """
     try:
         hash_func = hashlib.new(hash_algo)
         with open(file_path, "rb") as f:
@@ -54,20 +34,6 @@ def calculate_checksum(file_path, hash_algo="sha256"):
 def check_local_files(
     model_name, model_url, output_dir, filename, expected_checksum, newname=None
 ):
-    """
-    Checks if the local file exists and verifies its checksum.
-
-    Args:
-        model_name (str): Name of the model.
-        model_url (str): URL of the model on Hugging Face.
-        output_dir (str): Directory where the file is expected to be.
-        filename (str): Original filename of the model.
-        expected_checksum (str): Expected checksum of the file.
-        newname (str, optional): New name for the file.
-
-    Returns:
-        bool: True if the file exists and checksum matches, False otherwise.
-    """
     meaningful_filename = newname if newname else filename
     file_path = os.path.join(output_dir, meaningful_filename)
 
@@ -82,7 +48,7 @@ def check_local_files(
             print(f"\t❌ Checksum mismatch: {meaningful_filename}")
             return False
     else:
-        print(f"\t⚠️ File does not exist: {meaningful_filename}")
+        print(f"\t👎 File does not exist: {file_path}")
         return False
 
 
@@ -96,22 +62,6 @@ def download_and_verify(
     newname=None,
     local_only=False,
 ):
-    """
-    Downloads a model file from Hugging Face and verifies its checksum. Renames the file if newname is provided.
-
-    Args:
-        model_name (str): Name of the model.
-        model_url (str): URL of the model on Hugging Face.
-        output_dir (str): Directory to save the downloaded file.
-        revision_sub (str): Revision of the model.
-        filename (str): Original filename of the model.
-        expected_checksum (str): Expected checksum of the file.
-        newname (str, optional): New name for the downloaded file.
-        local_only (bool): If True, only check local files without downloading.
-
-    Raises:
-        ValueError: If the calculated checksum does not match the expected checksum.
-    """
     if local_only:
         if check_local_files(
             model_name, model_url, output_dir, filename, expected_checksum, newname
@@ -131,7 +81,7 @@ def download_and_verify(
                 raise ValueError(f"Checksum mismatch for {model_name}: {file_path}")
 
         print(
-            f"\n{model_name}\t{model_url}:{meaningful_filename} does not exist. Downloading...\t🌎\n"
+            f"\t{model_name}\t{model_url} → {meaningful_filename} does not exist. Downloading...\n\t🌎"
         )
 
         hf_hub_download(
@@ -141,7 +91,7 @@ def download_and_verify(
             local_dir=output_dir,
         )
         os.rename(os.path.join(output_dir, filename), file_path)
-        print(f"Downloaded {model_url} -- {meaningful_filename} to {file_path}")
+        print(f"\t🛬 Downloaded: {meaningful_filename} → {file_path}")
 
     except (ValueError, OSError) as e:
         print(f"Error downloading or verifying {model_name}: {e}")
@@ -150,19 +100,6 @@ def download_and_verify(
 def download_snapshot(
     model_name, model_url, output_dir, revision_sub, local_only=False
 ):
-    """
-    Downloads a snapshot of a model from Hugging Face and moves the files to the specified output directory.
-
-    Args:
-        model_name (str): Name of the model.
-        model_url (str): URL of the model on Hugging Face.
-        output_dir (str): Directory to save the snapshot files.
-        revision_sub (str): Revision of the model.
-        local_only (bool): If True, only check local files without downloading.
-
-    Raises:
-        OSError: If there is an error creating directories or moving files.
-    """
     if local_only:
         print(f"🔍 Checking snapshot for {model_name} ({model_url})...")
         return
@@ -198,13 +135,6 @@ def download_snapshot(
 
 
 def main(api_key, local_only):
-    """
-    Main function to download and verify models from Hugging Face based on the information in models.json.
-
-    Args:
-        api_key (str): Hugging Face API key.
-        local_only (bool): If True, only check local files without downloading.
-    """
     script_dir = os.path.dirname(os.path.abspath(__file__))
     os.chdir(script_dir)
 
