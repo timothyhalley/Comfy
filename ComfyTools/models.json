@@ -1,6 +1,80 @@
 {
     "models": [
         {
+            "name": "Clip Vision S32B",
+            "type": "MODEL",
+            "url": "laion/CLIP-ViT-H-14-laion2B-s32B-b79K",
+            "dir": "{BASE_PATH}/models/clip/",
+            "revision": "main",
+            "filename": "model.safetensors",
+            "newname": "Clip-ViT-H-14-laion2B.safetensors",
+            "checksum": "036e6e2bd49697511f4f8b8cb5ee465f93025f7a69a145eadeb9a881ace9b18d"
+        },
+        {
+            "name": "Open Pose XL",
+            "type": "MODEL",
+            "url": "thibaud/controlnet-openpose-sdxl-1.0",
+            "dir": "{BASE_PATH}/models/controlnet/SDXL/",
+            "revision": "main",
+            "filename": "OpenPoseXL2.safetensors",
+            "checksum": "5a4b928cb1e93748217900cb66d4135bf70d932d2924232f925910fad9e43a92"
+        },
+        {
+            "name": "Cyber Real V50",
+            "type": "MODEL",
+            "url": "modelzpalace/cyberrealistic_v50",
+            "dir": "{BASE_PATH}/models/checkpoints/",
+            "revision": "main",
+            "filename": "cyberrealistic_v50.safetensors",
+            "checksum": "0b20a3f2cdc5fde427b739184c160c297ed65060d6bcc6de385b9bec9c798ca9"
+        },
+        {
+            "name": "T5XXL FP8 FULL",
+            "type": "MODEL",
+            "url": "comfyanonymous/flux_text_encoders",
+            "dir": "{BASE_PATH}/models/clip/",
+            "revision": "main",
+            "filename": "t5xxl_fp8_e4m3fn.safetensors",
+            "checksum": "7d330da4816157540d6bb7838bf63a0f02f573fc48ca4d8de34bb0cbfd514f09"
+        },
+        {
+            "name": "Hunyuan Vid TV2",
+            "type": "MODEL",
+            "url": "Comfy-Org/HunyuanVideo_repackaged",
+            "dir": "{BASE_PATH}/models/diffusion_models/Hunyuan",
+            "filename": "split_files/diffusion_models/hunyuan_video_t2v_720p_bf16.safetensors",
+            "revision": "main",
+            "newname": "Hunyuan/hunyuan_video_t2v_720p_bf16.safetensors",
+            "checksum": "c6ff2d107f0fec571fe276ad847468404ed01855c28c0be8859c3b311daec52a"
+        },
+        {
+            "name": "LLAVA LLAMA3 Scale",
+            "type": "MODEL",
+            "url": "calcuis/hunyuan-gguf",
+            "dir": "{BASE_PATH}/models/clip/",
+            "revision": "main",
+            "filename": "llava_llama3_fp8_scaled.safetensors",
+            "checksum": "2f0c3ad255c282cead3f078753af37d19099cafcfc8265bbbd511f133e7af250"
+        },
+        {
+            "name": "SuperScaleX3",
+            "type": "MODEL",
+            "url": "Mladen28/bigaspv2_lustifyv2_merge",
+            "dir": "{BASE_PATH}/models/upscale_models",
+            "revision": "main",
+            "filename": "4xNMKDSuperscale_4xNMKDSuperscale.pt",
+            "checksum": "1d1b0078fe71446e0469d8d4df59e96baa80d83cda600d68237d655830821bcc"
+        },
+        {
+            "name": "JuggernautXL Diff",
+            "type": "MODEL",
+            "url": "misri/juggernautXL_juggXIByRundiffusion",
+            "dir": "{BASE_PATH}/models/checkpoints/",
+            "revision": "main",
+            "filename": "juggernautXL_juggXIByRundiffusion.safetensors",
+            "checksum": "33e58e86686f6b386c526682b5da9228ead4f91d994abd4b053442dc5b42719e"
+        },
+        {
             "name": "City96 Encoder",
             "type": "MODEL",
             "url": "city96/t5-v1_1-xxl-encoder-gguf",
@@ -789,7 +863,7 @@
             "url": "openai/clip-vit-large-patch14",
             "dir": "{BASE_PATH}/models/clip",
             "revision": "main",
-            "filename": "model.safetensors",
+            "filename": "clip-vit-large.safetensors",
             "checksum": "a2bf730a0c7debf160f7a6b50b3aaf3703e7e88ac73de7a314903141db026dcb"
         },
         {
