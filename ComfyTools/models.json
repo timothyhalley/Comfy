@@ -1,6 +1,24 @@
 {
     "models": [
         {
+            "name": "City96 Flux1 Guff Q8_1",
+            "type": "MODEL",
+            "url": "city96/FLUX.1-dev-gguf",
+            "dir": "{BASE_PATH}/models/diffusion_models/FLUX1",
+            "revision": "main",
+            "filename": "flux1-dev-Q8_0.gguf",
+            "checksum": "129032f32224bf7138f16e18673d8008ba5f84c1ec74063bf4511a8bb4cf553d"
+        },
+        {
+            "name": "City96 Flux1 Guff Q4_1",
+            "type": "MODEL",
+            "url": "city96/FLUX.1-dev-gguf",
+            "dir": "{BASE_PATH}/models/diffusion_models/FLUX1",
+            "revision": "main",
+            "filename": "flux1-dev-Q4_1.gguf",
+            "checksum": "da04c47a9b717bf9a4dd545e46d89e4a62fb44b9497bf9a5d13d622d592fbcda"
+        },
+        {
             "name": "Mochi Model Preview",
             "type": "MODEL",
             "url": "Comfy-Org/mochi_preview_repackaged",
