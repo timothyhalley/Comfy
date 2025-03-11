@@ -1,25 +1,23 @@
+import argparse
 import os
-import subprocess
 import sys
 
 from PIL import Image
 
 
-def reduce_png_size(
-    input_path, quality_min=60, quality_max=85, width=None, height=None
-):
+def reduce_image_size(input_path, quality=85, width=None, height=None):
     """
-    Reduce the size of a PNG image by resizing and compressing it using pngquant.
+    Reduce the size of an image (PNG or JPEG) by resizing and compressing it.
 
     Args:
-        input_path (str): The path to the input PNG image.
-        quality_min (int): The minimum quality level for the saved image.
-        quality_max (int): The maximum quality level for the saved image.
+        input_path (str): The path to the input image (PNG or JPEG).
+        quality (int): The quality level for the saved image (1-100, higher means better quality and larger size).
         width (int, optional): The width to resize the image to. Preserves aspect ratio.
         height (int, optional): The height to resize the image to. Preserves aspect ratio.
     """
     # Define the output path with the quality percentage in the filename
-    output_path = input_path.replace(".png", f"_{quality_max}.png")
+    base_name, ext = os.path.splitext(input_path)
+    output_path = f"{base_name}_{quality}.jpeg"
 
     try:
         # Open an image file
@@ -28,27 +26,14 @@ def reduce_png_size(
             if width or height:
                 img.thumbnail((width or img.width, height or img.height))
 
-            # Save a temporary copy of the image
-            temp_path = output_path.replace(".png", "_temp.png")
-            img.save(temp_path, optimize=True)
+            # Convert the image to RGB mode if necessary for JPEG format
+            if img.mode in ("RGBA", "LA") or (
+                img.mode == "P" and "transparency" in img.info
+            ):
+                img = img.convert("RGB")
 
-            # Compress the image using pngquant
-            subprocess.run(
-                [
-                    "pngquant",
-                    "--quality",
-                    f"{quality_min}-{quality_max}",
-                    "--output",
-                    output_path,
-                    "--force",
-                    temp_path,
-                ],
-                check=True,
-            )
-
-        # Clean up the temporary file
-        if os.path.exists(temp_path):
-            os.remove(temp_path)
+            # Save the image with the specified quality
+            img.save(output_path, "JPEG", quality=quality, optimize=True)
 
         print(f"Reduced size image saved to {output_path}")
 
@@ -57,9 +42,33 @@ def reduce_png_size(
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python script.py <input_image_path>")
-        sys.exit(1)
+    parser = argparse.ArgumentParser(
+        description="Reduce the size of an image (PNG or JPEG)."
+    )
+    parser.add_argument(
+        "input_image_path", type=str, help="The path to the input image."
+    )
+    parser.add_argument(
+        "--quality",
+        type=int,
+        default=85,
+        help="The quality level for the saved image (1-100).",
+    )
+    parser.add_argument(
+        "--width",
+        type=int,
+        help="The width to resize the image to. Preserves aspect ratio.",
+    )
+    parser.add_argument(
+        "--height",
+        type=int,
+        help="The height to resize the image to. Preserves aspect ratio.",
+    )
 
-    input_image_path = sys.argv[1]
-    reduce_png_size(input_image_path, quality_min=60, quality_max=85, width=1024)
+    args = parser.parse_args()
+    reduce_image_size(
+        args.input_image_path,
+        quality=args.quality,
+        width=args.width,
+        height=args.height,
+    )

@@ -2,7 +2,6 @@
 comfyui_desktop:
   is_default: "true"
   checkpoints: /Volumes/MySSD/ComfyUI/models/checkpoints/
-  classifiers: /Volumes/MySSD/ComfyUI/models/classifiers/
   clip: /Volumes/MySSD/ComfyUI/models/clip/
   clip_vision: /Volumes/MySSD/ComfyUI/models/clip_vision/
   configs: /Volumes/MySSD/ComfyUI/models/configs/
@@ -12,30 +11,10 @@ comfyui_desktop:
   embeddings: /Volumes/MySSD/ComfyUI/models/embeddings/
   gligen: /Volumes/MySSD/ComfyUI/models/gligen/
   hypernetworks: /Volumes/MySSD/ComfyUI/models/hypernetworks/
-  hypersd: /Volumes/MySSD/ComfyUI/models/HyperSD/
+  ipadapters: /Volumes/MySSD/ComfyUI/models/ipadapters/
   loras: /Volumes/MySSD/ComfyUI/models/loras/
-  photomaker: /Volumes/MySSD/ComfyUI/models/photomaker/
   style_models: /Volumes/MySSD/ComfyUI/models/style_models/
   unet: /Volumes/MySSD/ComfyUI/models/unet/
   upscale_models: /Volumes/MySSD/ComfyUI/models/upscale_models/
   vae: /Volumes/MySSD/ComfyUI/models/vae/
   vae_approx: /Volumes/MySSD/ComfyUI/models/vae_approx/
-  animatediff: /Volumes/MySSD/ComfyUI/models/AnimateDiff/
-  animatediff_models: /Volumes/MySSD/ComfyUI/models/animatediff_models/
-  animatediff_motion_lora: /Volumes/MySSD/ComfyUI/models/animatediff_motion_lora/
-  animatediff_video_formats: /Volumes/MySSD/ComfyUI/models/animatediff_video_formats/
-  ipadapter: /Volumes/MySSD/ComfyUI/models/ipadapter/
-  liveportrait: /Volumes/MySSD/ComfyUI/models/liveportrait/
-  insightface: /Volumes/MySSD/ComfyUI/models/insightface/
-  layerstyle: /Volumes/MySSD/ComfyUI/models/layerstyle/
-  LLM: /Volumes/MySSD/ComfyUI/models/LLM/
-  Joy_caption: /Volumes/MySSD/ComfyUI/models/Joy_caption/
-  sams: /Volumes/MySSD/ComfyUI/models/sams/
-  blip: /Volumes/MySSD/ComfyUI/models/blip/
-  CogVideo: /Volumes/MySSD/ComfyUI/models/CogVideo/
-  xlabs: /Volumes/MySSD/ComfyUI/models/xlabs/
-  instantid: /Volumes/MySSD/ComfyUI/models/instantid/
-  ultralytics: /Volumes/MySSD/ComfyUI/models/ultralytics/
-  custom_nodes: custom_nodes/
-  download_model_base: models
-  base_path: /Users/timothyhalley/Projects/Comfy/ComfyUI

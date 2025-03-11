@@ -1,6 +1,16 @@
 {
     "models": [
         {
+            "name": "SDXL Pony Furry V6",
+            "type": "MODEL",
+            "url": "LyliaEngine/Pony_Diffusion_V6_XL",
+            "dir": "{BASE_PATH}/models/checkpoints/",
+            "revision": "main",
+            "filename": "ponyDiffusionV6XL_v6StartWithThisOne.safetensors",
+            "newname": "ponyDiffusionV6XL.safetensors",
+            "checksum": "0b20a3f2cdc5fde427b739184c160c297ed65060d6bcc6de385b9bec9c798ca9"
+        },
+        {
             "name": "Mochi Model Preview",
             "type": "MODEL",
             "url": "Comfy-Org/mochi_preview_repackaged",
@@ -17,7 +27,7 @@
             "dir": "{BASE_PATH}/models/clip/",
             "revision": "main",
             "filename": "model.safetensors",
-            "newname": "Clip-ViT-H-14-laion2B.safetensors",
+            "newname": "CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors",
             "checksum": "036e6e2bd49697511f4f8b8cb5ee465f93025f7a69a145eadeb9a881ace9b18d"
         },
         {
@@ -179,7 +189,7 @@
         {
             "name": "Flux1 Canny DEV",
             "type": "MODEL",
-            "url": "second-state/FLUX.1-Canny-dev-GGUF",
+            "url": "black-forest-labs/FLUX.1-Canny-dev",
             "dir": "{BASE_PATH}/models/diffusion_models",
             "revision": "main",
             "filename": "flux1-canny-dev.safetensors",
