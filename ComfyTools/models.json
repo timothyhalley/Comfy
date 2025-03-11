@@ -1,16 +1,6 @@
 {
     "models": [
         {
-            "name": "SDXL Pony Furry V6",
-            "type": "MODEL",
-            "url": "LyliaEngine/Pony_Diffusion_V6_XL",
-            "dir": "{BASE_PATH}/models/checkpoints/",
-            "revision": "main",
-            "filename": "ponyDiffusionV6XL_v6StartWithThisOne.safetensors",
-            "newname": "ponyDiffusionV6XL.safetensors",
-            "checksum": "0b20a3f2cdc5fde427b739184c160c297ed65060d6bcc6de385b9bec9c798ca9"
-        },
-        {
             "name": "Mochi Model Preview",
             "type": "MODEL",
             "url": "Comfy-Org/mochi_preview_repackaged",
