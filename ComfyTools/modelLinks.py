@@ -27,7 +27,7 @@ def create_symlinks(source_folder, target_folder):
 
 
 # Example usage
-source_folder = "/Users/I850916/Projects/ComfyUI/models"
+source_folder = "/Users/timothyhalley/Projects/ComfyUI/models"
 target_folder = "/Volumes/MySSD/ComfyUI/models"
 
 create_symlinks(source_folder, target_folder)
