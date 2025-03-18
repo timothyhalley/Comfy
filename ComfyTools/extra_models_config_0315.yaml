@@ -1,0 +1,36 @@
+comfyui_desktop:
+  CogVideo: /Volumes/MySSD/ComfyUI/models/CogVideo
+  Joy_caption: /Volumes/MySSD/ComfyUI/models/Joy_caption
+  LLM: /Volumes/MySSD/ComfyUI/models/LLM
+  animatediff_models: /Volumes/MySSD/ComfyUI/models/animatediff_models
+  animatediff_motion_lora: /Volumes/MySSD/ComfyUI/models/animatediff_motion_lora
+  animatediff_video_formats: /Volumes/MySSD/ComfyUI/models/animatediff_video_formats
+  base_path: /Users/timothyhalley/Projects/ComfyUI
+  blip: /Volumes/MySSD/ComfyUI/models/blip
+  checkpoints: /Volumes/MySSD/ComfyUI/models/checkpoints
+  clip: /Volumes/MySSD/ComfyUI/models/clip
+  clip_vision: /Volumes/MySSD/ComfyUI/models/clip_vision
+  configs: /Volumes/MySSD/ComfyUI/models/configs
+  controlnet: /Volumes/MySSD/ComfyUI/models/controlnet
+  custom_nodes: custom_nodes/
+  diffusers: /Volumes/MySSD/ComfyUI/models/diffusers
+  diffusion_models: /Volumes/MySSD/ComfyUI/models/diffusion_models
+  download_model_base: models
+  embeddings: /Volumes/MySSD/ComfyUI/models/embeddings
+  gligen: /Volumes/MySSD/ComfyUI/models/gligen
+  hypernetworks: /Volumes/MySSD/ComfyUI/models/hypernetworks
+  insightface: /Volumes/MySSD/ComfyUI/models/insightface
+  is_default: 'true'
+  layerstyle: /Volumes/MySSD/ComfyUI/models/layerstyle
+  liveportrait: /Volumes/MySSD/ComfyUI/models/liveportrait
+  loras: /Volumes/MySSD/ComfyUI/models/loras
+  photomaker: /Volumes/MySSD/ComfyUI/models/photomaker
+  style_models: /Volumes/MySSD/ComfyUI/models/style_models
+  text_encoders: /Volumes/MySSD/ComfyUI/models/text_encoders
+  unet: /Volumes/MySSD/ComfyUI/models/unet
+  upscale_models: /Volumes/MySSD/ComfyUI/models/upscale_models
+  vae: /Volumes/MySSD/ComfyUI/models/vae
+  vae_approx: /Volumes/MySSD/ComfyUI/models/vae_approx
+  xlabs: /Volumes/MySSD/ComfyUI/models/xlabs
+desktop_extensions:
+  custom_nodes: /Applications/ComfyUI.app/Contents/Resources/ComfyUI/custom_nodes
