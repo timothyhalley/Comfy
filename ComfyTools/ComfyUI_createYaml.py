@@ -4,7 +4,7 @@ from datetime import datetime
 import yaml
 
 # Define base path and model folder
-base_path = "/Users/timothyhalley/Projects/ComfyUI"
+base_path = "/Users/I850916/Projects/ComfyUI"
 download_model_base = "models"
 complete_path = os.path.join(base_path, download_model_base)
 

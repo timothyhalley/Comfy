@@ -3,12 +3,12 @@ import shutil
 
 # List of paths to be cleaned
 paths = [
-    "/Users/timothyhalley/Library/Application Support/ComfyUI/DawnGraphiteCache",
-    "/Users/timothyhalley/Library/Application Support/ComfyUI/GPUCache",
-    "/Users/timothyhalley/Library/Application Support/ComfyUI/Cache",
-    "/Users/timothyhalley/Library/Application Support/ComfyUI/Network Persistent State",
-    "/Users/timothyhalley/Library/Application Support/ComfyUI/DawnWebGPUCache",
-    "/Users/timothyhalley/Library/Application Support/ComfyUI/Code Cache",
+    "/Users/I850916/Library/Application Support/ComfyUI/DawnGraphiteCache",
+    "/Users/I850916/Library/Application Support/ComfyUI/GPUCache",
+    "/Users/I850916/Library/Application Support/ComfyUI/Cache",
+    "/Users/I850916/Library/Application Support/ComfyUI/Network Persistent State",
+    "/Users/I850916/Library/Application Support/ComfyUI/DawnWebGPUCache",
+    "/Users/I850916/Library/Application Support/ComfyUI/Code Cache",
 ]
 
 
