@@ -1,50 +1,51 @@
 import os
-from datetime import datetime
-
 import yaml
+from collections import OrderedDict
 
-# Define base path and model folder
-base_path = "/Users/I850916/Projects/ComfyUI"
-download_model_base = "models"
-complete_path = os.path.join(base_path, download_model_base)
+# Define base paths
+ssd_path = "/Volumes/MySSD/ComfyUI/models"
+comfyui_path = os.path.expanduser("~/Projects/ComfyUI")  # Expand `~` to full path
+comfyui_library = os.path.expanduser("~/Library/Application Support/ComfyUI")  # Library path
+models_path = os.path.join(comfyui_path, "models")
 
-# Define the fixed entries
-fixed_entries = [
-    ("is_default", "true"),
-    ("custom_nodes", "custom_nodes/"),
-    ("download_model_base", "models"),
-    ("base_path", base_path),
-]
+# YAML file path
+yaml_file_path = os.path.join(comfyui_library, "extra_models_config.yaml")  # Save in Library path
 
-# Initialize the YAML structure
-yaml_data = {
-    "comfyui_desktop": {},
-    "desktop_extensions": {
-        "custom_nodes": "/Applications/ComfyUI.app/Contents/Resources/ComfyUI/custom_nodes"
-    },
-}
+# Initialize ordered YAML data with the provided additional structure
+yaml_data = OrderedDict({
+    "comfyui_desktop": OrderedDict({
+        "is_default": "true",
+        "custom_nodes": "custom_nodes/",
+        "download_model_base": "models",
+        "base_path": comfyui_path,
+    }),
+    "desktop_extensions": OrderedDict({
+        "custom_nodes": "/Applications/ComfyUI.app/Contents/Resources/ComfyUI/custom_nodes",
+    }),
+})
 
-# Add the fixed entries to comfyui_desktop
-for key, value in fixed_entries:
-    yaml_data["comfyui_desktop"][key] = value
-
-# Add new entries for each folder under the models directory
-if os.path.exists(complete_path) and os.path.isdir(complete_path):
-    for folder_name in os.listdir(complete_path):
-        folder_path = os.path.join(complete_path, folder_name)
+# Add new folder entries to the comfyui_desktop section
+if os.path.exists(models_path) and os.path.isdir(models_path):
+    for folder_name in sorted(os.listdir(models_path)):  # Sort folder names for consistent order
+        folder_path = os.path.join(models_path, folder_name)
         if os.path.isdir(folder_path):  # Check if it's a directory
-            new_entry_key = folder_name
-            new_entry_value = f"/Volumes/MySSD/ComfyUI/models/{folder_name}"
-            # Add the new entry if it doesn't already exist
-            if new_entry_key not in yaml_data["comfyui_desktop"]:
-                yaml_data["comfyui_desktop"][new_entry_key] = new_entry_value
+            yaml_data["comfyui_desktop"][folder_name] = f"{ssd_path}/{folder_name}"
+            print(f"Added entry: {folder_name} -> {ssd_path}/{folder_name}")
 
-# Generate the file name using the current date
-current_date = datetime.now().strftime("%m%d")  # Get MMDD format
-file_name = f"extra_models_config_{current_date}.yaml"
+# Convert nested OrderedDicts into plain dictionaries
+def convert_to_dict(data):
+    if isinstance(data, OrderedDict):
+        return {k: convert_to_dict(v) for k, v in data.items()}
+    elif isinstance(data, list):
+        return [convert_to_dict(i) for i in data]
+    else:
+        return data
 
-# Write the YAML data to the file
-with open(file_name, "w") as yaml_file:
-    yaml.dump(yaml_data, yaml_file, default_flow_style=False)
+# Ensure the Library path exists
+os.makedirs(comfyui_library, exist_ok=True)
 
-print(f"YAML file written to: {file_name}")
+# Write the YAML data to the file with proper formatting
+with open(yaml_file_path, "w") as yaml_file:
+    yaml.dump(convert_to_dict(yaml_data), yaml_file, default_flow_style=False, sort_keys=False)
+
+print(f"Updated YAML file written to: {yaml_file_path}")

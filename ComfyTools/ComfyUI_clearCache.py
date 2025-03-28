@@ -1,16 +1,18 @@
 import os
 import shutil
 
-# List of paths to be cleaned
-paths = [
-    "/Users/I850916/Library/Application Support/ComfyUI/DawnGraphiteCache",
-    "/Users/I850916/Library/Application Support/ComfyUI/GPUCache",
-    "/Users/I850916/Library/Application Support/ComfyUI/Cache",
-    "/Users/I850916/Library/Application Support/ComfyUI/Network Persistent State",
-    "/Users/I850916/Library/Application Support/ComfyUI/DawnWebGPUCache",
-    "/Users/I850916/Library/Application Support/ComfyUI/Code Cache",
-]
+# Base path for "Library/Application Support/ComfyUI"
+base_path = os.path.expanduser("~/Library/Application Support/ComfyUI")
 
+# List of subdirectories under the base path
+paths = [
+    "DawnGraphiteCache",
+    "GPUCache",
+    "Cache",
+    "Network Persistent State",
+    "DawnWebGPUCache",
+    "Code Cache",
+]
 
 # Function to delete files and folders under the specified path
 def clean_directory(directory_path):
@@ -24,11 +26,12 @@ def clean_directory(directory_path):
             shutil.rmtree(dir_path)
             print(f"Deleted folder: {dir_path}")
 
-
-for path in paths:
-    if os.path.exists(path):
-        clean_directory(path)
+# Iterate over the subdirectories and clean them
+for sub_path in paths:
+    full_path = os.path.join(base_path, sub_path)  # Dynamically resolve the full path
+    if os.path.exists(full_path):
+        clean_directory(full_path)
     else:
-        print(f"Path not found: {path}")
+        print(f"Path not found: {full_path}")
 
 print("Cleanup completed.")
